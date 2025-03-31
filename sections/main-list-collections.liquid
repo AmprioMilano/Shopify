@@ -1,0 +1,769 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{% include 'breadcrumbs' %}
+<div class="page-width">
+  {%- liquid
+    case section.settings.sort
+      when 'products_high', 'products_low'
+        assign collections = collections | sort: 'all_products_count'
+      when 'date', 'date_reversed'
+        assign collections = collections | sort: 'published_at'
+    endcase
+
+    if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
+      assign collections = collections | reverse
+    endif
+
+    assign moduloResult = 28 | modulo: section.settings.columns_desktop
+    assign paginate_by = 30
+    if moduloResult == 0
+      assign paginate_by = 28
+    endif
+  -%}
+  {%- paginate collections by 50 -%}
+    <ul class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
+  
+          
+        
+ <ul class="collection-list grid grid--3-col-desktop grid--2-col-tablet-down" role="list">
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 2;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/mamma-mia">
+                <img src="//ampriomilano.com/cdn/shop/collections/MAMMA_MIA_melamine_-_table_1.jpg?v=1735894778&amp;width=1500" alt="Mamma Mia" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/mamma-mia" class="full-unstyled-link">Mamma Mia</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/versailles">
+                <img src="//ampriomilano.com/cdn/shop/collections/VERSAILLES_melamine_table.jpg?v=1733497050&amp;width=1500" alt="Versailles" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/versailles" class="full-unstyled-link">Versailles</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/gli-inseparabili">
+                <img src="//ampriomilano.com/cdn/shop/collections/GLI.jpg?v=1736334508&amp;width=1500" alt="Gli inseparabili" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/gli-inseparabili" class="full-unstyled-link">Gli inseparabili</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/zodiac-vibe">
+                <img src="//ampriomilano.com/cdn/shop/collections/zodiak.jpg?v=1736335020&amp;width=1500" alt="Zodiac Vibe" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/zodiac-vibe" class="full-unstyled-link">Zodiac Vibe</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 11;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/crystal-touch">
+                <img src="//ampriomilano.com/cdn/shop/collections/CRYSTAL_TOUCH.jpg?v=1733491918&amp;width=1500" alt="Crystal Touch" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/crystal-touch" class="full-unstyled-link">Crystal Touch</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/sagrada-familia">
+                <img src="//ampriomilano.com/cdn/shop/collections/LA_STILOSA.jpg?v=1737541109&amp;width=1500" alt="Sagrada Familia" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/sagrada-familia" class="full-unstyled-link">Sagrada Familia</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/firenze">
+                <img src="//ampriomilano.com/cdn/shop/collections/FIRENZEi.jpg?v=1733498478&amp;width=1500" alt="Firenze" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/firenze" class="full-unstyled-link">Firenze</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 6;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/baroque-rock">
+                <img src="//ampriomilano.com/cdn/shop/collections/BAROQUE_ROCK_ANNIVER.jpg?v=1733489213&amp;width=1500" alt="Baroque &amp; Rock" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/baroque-rock" class="full-unstyled-link">Baroque &amp; Rock</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 5;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/avant-guard">
+                <img src="//ampriomilano.com/cdn/shop/collections/CATALOGO_HORECA_SS24d_INNER_PAGES_stampa.jpg?v=1736332956&amp;width=1500" alt="Avant Guard" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/avant-guard" class="full-unstyled-link">Avant Guard</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 2;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/joke-table-kitchen">
+                <img src="//ampriomilano.com/cdn/shop/collections/Baci_Milano_JOKE_.ppg.jpg?v=1733491667&amp;width=1500" alt="Joke Table &amp; Kitchen" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/joke-table-kitchen" class="full-unstyled-link">Joke Table &amp; Kitchen</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 4;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/aqua">
+                <img src="//ampriomilano.com/cdn/shop/collections/Baci_Milano_Aqua.jpg?v=1733493112&amp;width=1500" alt="Aqua" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/aqua" class="full-unstyled-link">Aqua</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 8;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/chic-zen">
+                <img src="//ampriomilano.com/cdn/shop/collections/Baci_Milano_chic_zen_table.jpg?v=1733495326&amp;width=1500" alt="Chic &amp; Zen" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/chic-zen" class="full-unstyled-link">Chic &amp; Zen</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 7;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/cheers">
+                <img src="//ampriomilano.com/cdn/shop/collections/Bacimilano_Cheers_glasses.jpg?v=1733493577&amp;width=1500" alt="Cheers" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/cheers" class="full-unstyled-link">Cheers</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/portofino">
+                <img src="//ampriomilano.com/cdn/shop/collections/PORTOFINO.jpg?v=1733503170&amp;width=1500" alt="Portofino" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/portofino" class="full-unstyled-link">Portofino</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 10;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/cosmopolitan">
+                <img src="//ampriomilano.com/cdn/shop/collections/COSMOPOLITAN_2.jpg?v=1735202226&amp;width=1500" alt="Cosmopolitan" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/cosmopolitan" class="full-unstyled-link">Cosmopolitan</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 3;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/amazzonia">
+                <img src="//ampriomilano.com/cdn/shop/collections/AMAZZONIA.jpg?v=1733497358&amp;width=1500" alt="Amazzonia" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/amazzonia" class="full-unstyled-link">Amazzonia</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/ortigia">
+                <img src="//ampriomilano.com/cdn/shop/collections/ORTIGIA1.jpg?v=1733494240&amp;width=1500" alt="Ortigia" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/ortigia" class="full-unstyled-link">Ortigia</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 2;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/alphabet">
+                <img src="//ampriomilano.com/cdn/shop/collections/2.png?v=1733496520&amp;width=1500" alt="Alphabet" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/alphabet" class="full-unstyled-link">Alphabet</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/kosmo">
+                <img src="//ampriomilano.com/cdn/shop/collections/KOSMO.jpg?v=1733498784&amp;width=1500" alt="Kosmo" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/kosmo" class="full-unstyled-link">Kosmo</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/le-rouge">
+                <img src="//ampriomilano.com/cdn/shop/collections/LE_ROUGE_ner.jpg?v=1733503955&amp;width=1500" alt="Le Rouge" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/le-rouge" class="full-unstyled-link">Le Rouge</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 15;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/elf-co">
+                <img src="//ampriomilano.com/cdn/shop/collections/Elf_Co.jpg?v=1736334187&amp;width=1500" alt="Elf &amp; Co." loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/elf-co" class="full-unstyled-link">Elf &amp; Co.</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/il-natale-del-re">
+                <img src="//ampriomilano.com/cdn/shop/collections/il-nat.jpg?v=1736333458&amp;width=1500" alt="IL Natale del Re" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/il-natale-del-re" class="full-unstyled-link">IL Natale del Re</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/mamma-mia-xmas">
+                <img src="//ampriomilano.com/cdn/shop/collections/MAMMA-MIA-XMAS.jpg?v=1736333894&amp;width=1500" alt="Mamma Mia Xmas" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/mamma-mia-xmas" class="full-unstyled-link">Mamma Mia Xmas</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/gulp">
+                <img src="//ampriomilano.com/cdn/shop/collections/GULP.jpg?v=1733503419&amp;width=1500" alt="Gulp" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/gulp" class="full-unstyled-link">Gulp</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/teste-matte">
+                <img src="//ampriomilano.com/cdn/shop/collections/Baci_Milano_TESTE_MATTE.jpg?v=1733496319&amp;width=1500" alt="Teste Matte" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/teste-matte" class="full-unstyled-link">Teste Matte</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 2;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/forme">
+                <img src="//ampriomilano.com/cdn/shop/collections/FORME_7.jpg?v=1737628006&amp;width=1500" alt="Forme" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/forme" class="full-unstyled-link">Forme</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 2;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/optical">
+                <img src="//ampriomilano.com/cdn/shop/collections/OPTICAL_22.jpg?v=1735820343&amp;width=1500" alt="Optical" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/optical" class="full-unstyled-link">Optical</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/sole-mio">
+                <img src="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/Untitled.png?v=1737630982" alt="Sole Mio" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/sole-mio" class="full-unstyled-link">Sole Mio</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="collection-list__item grid__item scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 2;">
+    <div class="card-wrapper animate-arrow collection-card-wrapper" bis_skin_checked="1">
+      <div bis_skin_checked="1">
+        <div bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <div bis_skin_checked="1">
+              <a href="/collections/ventagli">
+                <img src="//ampriomilano.com/cdn/shop/collections/VENTAGLI-09.jpg?v=1736332553&amp;width=1500" alt="Ventagli" loading="lazy" class="motion-reduce">
+              </a>
+            </div>
+          </div>
+          <div class="card__content" bis_skin_checked="1">
+            <div class="card__information" bis_skin_checked="1">
+              <h3 class="card__heading">
+                <a href="/collections/ventagli" class="full-unstyled-link">Ventagli</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
+          
+    </ul>
+    {% render 'pagination', paginate: paginate %}
+  {%- endpaginate -%}
+</div>
+{% schema %}
+{
+  "name": "t:sections.main-list-collections.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:sections.main-list-collections.settings.title.label",
+      "default": "t:sections.main-list-collections.settings.title.default"
+    },
+    {
+      "type": "select",
+      "id": "sort",
+      "options": [
+        {
+          "value": "alphabetical",
+          "label": "t:sections.main-list-collections.settings.sort.options__1.label"
+        },
+        {
+          "value": "alphabetical_reversed",
+          "label": "t:sections.main-list-collections.settings.sort.options__2.label"
+        },
+        {
+          "value": "date_reversed",
+          "label": "t:sections.main-list-collections.settings.sort.options__3.label"
+        },
+        {
+          "value": "date",
+          "label": "t:sections.main-list-collections.settings.sort.options__4.label"
+        },
+        {
+          "value": "products_high",
+          "label": "t:sections.main-list-collections.settings.sort.options__5.label"
+        },
+        {
+          "value": "products_low",
+          "label": "t:sections.main-list-collections.settings.sort.options__6.label"
+        }
+      ],
+      "default": "alphabetical",
+      "label": "t:sections.main-list-collections.settings.sort.label"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-list-collections.settings.image_ratio.label",
+      "info": "t:sections.main-list-collections.settings.image_ratio.info"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-list-collections.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
+        }
+      ],
+      "default": "2",
+      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,105 @@
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+{% comment %}
+<div id="preloader" class="preloader" bis_skin_checked="1">
+	<div id="camera" bis_skin_checked="1">
+        <img src="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/AMPR_LOGO_PRELOADER.svg?v=1735230751" alt="">
+	</div>
+    <div class="preloader_inner" bis_skin_checked="1">20%</div>
+  <div class="progress" bis_skin_checked="1"></div>
+</div>
+{% endcomment %}
+<div class="top-header">
+  <div class="container d-fx jc-sb">
+    <div class="top-header--left">
+      <div class="address">Insurance Building, Al Rega, Dubai UAE</div>
+    </div>
+    <div class="top-header--right d-fx">
+      <a href="tel:+971 52 177 3471" class="tdu-on-hover">+971 52 177 3471</a>
+      <a href="/pages/customer-services" class="tdu-on-hover" >Customer Service</a>
+    </div>
+  </div>
+</div>
+<header class="header">
+  <div class="container d-fx jc-c ai-c">
+    <a href="/" class="logo">
+      <img class="small" src="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/LOGO_SMALL_f7cb0a9e-20a8-4252-afcd-66f1c84efa95.svg?v=1735224856">
+      <img class="full" src="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/AMP_LOGO_FULL.svg?v=1735227680">
+    </a>
+  </div>
+  <div class="container d-fx jc-sb ai-c">
+    <div class="mob-nav-wrap">
+      <div class="mob-n-wrap hide-on-desktop">
+        <div class="mob-nav hide-on-desktop">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      </div>
+      
+    </div>
+    <div class="header--left">
+      <a href="/" class="logo hide-on-desktop">
+      <img class="small" src="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/LOGO_SMALL_f7cb0a9e-20a8-4252-afcd-66f1c84efa95.svg?v=1735224856">
+      <img class="full" src="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/AMP_LOGO_FULL.svg?v=1735227680">
+    </a>
+    </div>
+    <div class="header--center d-fx jc-c">
+      <nav>
+        <ul class="d-fx jc-c">
+          {% for link in linklists.main-menu.links -%}
+            <li>
+              <a class="{% if link.active or link.child_active %} active{% endif %}" href="{{ link.url }}">{{ link.title | escape }}</a>
+            </li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+    <div class="header--right">
+        <ul class="d-fx jc-e">
+          <li>
+            
+            <a class="tdu-on-hover" href="#">
+              <span class="hide-on-desktop">
+                <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M36.2018 36.2008L43.5 43.5M41.383 23.6915C41.383 33.4622 33.4622 41.383 23.6915 41.383C13.9208 41.383 6 33.4622 6 23.6915C6 13.9208 13.9208 6 23.6915 6C33.4622 6 41.383 13.9208 41.383 23.6915Z" vector-effect="non-scaling-stroke"></path></svg>  
+              </span>
+              
+              Search</a></li>
+          <li><a class="tdu-on-hover" href="/account">Profile</a></li>
+          <li><a class="tdu-on-hover header-cart" href="#"><span class="hide-on-mobile">Cart</span><span class="hide-on-desktop">({{ cart.item_count }})</span><span class="hide-on-mobile"> — {{ cart.item_count }}</span></a></li>
+        </ul>
+    </div>
+  </div>
+</header>
+<form class="gl-d-searchbox" method="GET" action="/search">
+<div class="search-head" bis_skin_checked="1">
+  <h4>Search</h4>
+  <div class="close-search-modal" bis_skin_checked="1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><script xmlns="" id="pphgdbgldlmicfdkhondlafkiomnelnk"/><script xmlns=""/><script xmlns=""/>
+<path d="M7.38462 0L4 3.38488L0.61538 0.000259076L0 0.61564L3.38462 4.00026L0 7.38488L0.61538 8.00026L4 4.61564L7.38462 8.00026L8 7.38488L4.61538 4.00026L8 0.61564L7.38462 0.000259076V0Z" fill="#231F20"/>
+</svg>
+  </div>
+</div>
+<div class="form-wrap">
+  <input type="text" class="gl-d-searchbox-input" id="gl-d-searchbox-input" placeholder="Search" name="q" value="" autocapitalize="off" autocomplete="off" autocorrect="off">
+  <input type="submit" value="Search">
+</div>
+</form>
+<div class="hide-on-desktop mobile-menu">
+  <div class="mobile-menu-header">
+    <div class="left-mobile-menu-header">
+      
+    </div>
+    <div class="right-mobile-menu-header">
+      
+    </div>
+  </div>
+  <nav>
+        <ul class="d-fx jc-c">
+          {% for link in linklists.main-menu.links -%}
+            <li>
+              <a class="{% if link.active or link.child_active %} active{% endif %}" href="{{ link.url }}">{{ link.title | escape }}</a>
+            </li>
+          {%- endfor %}
+        </ul>
+      </nav>
+</div>
