@@ -1,0 +1,166 @@
+{{ 'multirow-imagegrid-with-text.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section{{ section.id }}-padding{
+    padding-top: {{ section.settings.padding-top_mobile }}px;
+    padding-bottom: {{ section.settings.padding-bottom_mobile }}px;
+  }
+  @media screen and (min-width: 750px){
+    .section{{ section.id }}-padding{
+      padding-top: {{ section.settings.padding-top }}px;
+      padding-bottom: {{ section.settings.padding-bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="section{{ section.id }}-padding section{{ section.id }}-margin color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width page-width-landing">
+    <div class="flex-wrap">
+    
+    {% for block in section.blocks %}
+       {% if block.type == 'tab' %}  
+          <div class="row_container flex-{{ block.settings.flex-direction }}">
+           {% if  block.settings.image1 != blank and block.settings.image2 != blank and block.settings.image3 != blank %}
+            <div class="image_container grid-container">
+              <img class="large-image" src="{{ block.settings.image1 | img_url: '500x' }}" width="{{ block.settings.image1.width }}" height="{{ block.settings.image1.height }}" alt="{{ block.settings.image1.alt }}" loading="lazy">
+              <img class="small-top" src="{{ block.settings.image2 | img_url: '500x' }}" width="{{ block.settings.image2.width }}" height="{{ block.settings.image2.height }}" alt="{{ block.settings.image2.alt }}" loading="lazy">
+              <img class="small-bottom" src="{{ block.settings.image3 | img_url: '500x' }}" width="{{ block.settings.image3.width }}" height="{{ block.settings.image3.height }}" alt="{{ block.settings.image3.alt }}" loading="lazy">
+              <img class="small-top" src="{{ block.settings.image4 | img_url: '500x' }}" width="{{ block.settings.image2.width }}" height="{{ block.settings.image2.height }}" alt="{{ block.settings.image2.alt }}" loading="lazy">
+              <img class="small-bottom" src="{{ block.settings.image5 | img_url: '500x' }}" width="{{ block.settings.image3.width }}" height="{{ block.settings.image3.height }}" alt="{{ block.settings.image3.alt }}" loading="lazy">
+            </div>
+            {% endif %}
+            <div class="content text_container text-align-{{ block.settings.alignment-3 }}">
+               {{ block.settings.richtext-3 }}
+              {% if block.settings.button_text3 != blank %}
+              <div class="btn-collection">
+                <a class="button_coll" href="{{ block.settings.button_url3 }}">{{ block.settings.button_text3 }}</a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+  
+{% schema %}
+  {
+    "name": "Image Grid With Text",
+    "class": "multirow-imagegrid-with-text",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding-top",
+        "max": 100,
+        "min": 0,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-bottom",
+        "max": 100,
+        "min": 0,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Padding Mobile"
+      },
+      {
+        "type": "range",
+        "id": "padding-top_mobile",
+        "max": 100,
+        "min": 0,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding-bottom_mobile",
+        "max": 100,
+        "min": 0,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+    ],
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab With Five Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image4",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image5",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "alignment-3",
+            "label": "Text alignment",
+            "options": [
+              { "value": "center", "label": "Center" },
+              { "value": "left", "label": "Left" },
+              { "value": "right", "label": "Right" }
+            ],
+            "default": "center"
+          },
+           {
+            "type": "select",
+            "id": "flex-direction",
+            "label": "Image Direction",
+            "options": [
+              { "value": "row", "label": "Row" },
+              { "value": "row-reverse", "label": "Row Reverse" },
+            ],
+            "default": "row"
+          },
+          {
+            "type": "richtext",
+            "id": "richtext-3",
+            "label": "Content"
+          },
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Grid With Text"
+      }
+    ]
+  }
+{% endschema %}
+
+

@@ -1,0 +1,105 @@
+.timeless-img-slider {
+    width: 100%;
+    display: inline-block;
+    position:relative;
+    background-color:#F8F7F3;
+}
+.timeless-img-slider .swiper-slide {
+    opacity: 1 !important;
+}
+.timeless-img-slider .slide_img img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+.timeless-img-slider .swiper-button-next:after,.timeless-img-slider .swiper-button-prev:after{
+  content:unset;
+}
+.timeless-img-slider .swiper-button-next,.timeless-img-slider .swiper-button-prev{
+  position:unset;
+  background-color:red;
+}
+.timeless-img-slider .slider_controls {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 224px;
+    margin-top: 50px;
+}
+.timeless-img-slider .swiper-button-next{
+  background-color:#2A7E6C;
+  
+}
+.timeless-img-slider .swiper-button-next {
+    background-color: #2a7e6c;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+.timeless-img-slider .swiper-button-prev {
+    background-color: #2a7e6c;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+.timeless-img-slider .swiper-button-prev.swiper-button-disabled{
+   background-color: #8A8A8A;
+}
+.timeless-img-slider .swiper-button-next.swiper-button-disabled{
+   background-color: #8A8A8A;
+}
+.timeless-img-slider .content.main_heading p {
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    font-weight: 400;
+    margin: 15px 0px;
+    margin-bottom: 30px;
+}
+
+.timeless-img-slider .content.main_heading p strong {
+    font-weight: 700;
+}
+.timeless-img-slider .custom-button a.btn {
+    background-color: #2A7E6C;
+    padding: 11px 30px;
+    border-radius: 40px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    border:2px solid #2a7e6c;
+    transition:0.2s ease-in;
+    font-family: 'TT Norms Pro Trial'!important;
+}
+.timeless-img-slider .custom-button a.btn:hover{
+      background-color: #fff;
+      border:2px solid #2a7e6c;
+      color:#2a7e6c;
+}
+.timeless-img-slider .sub_para_text p {
+    margin-top: 46px!important;
+}
+
+@media screen and (max-width: 1280px) {
+   .timeless-img-slider .content.main_heading p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .timeless-img-slider .content.main_heading p {
+    font-size: 16px;
+  }
+  .timeless-img-slider .custom-button a.btn {
+    padding: 11px 8px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+   .timeless-img-slider .slider_controls {
+    gap: 120px;
+}
+}

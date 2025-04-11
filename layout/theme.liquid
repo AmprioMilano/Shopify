@@ -41,7 +41,45 @@
     {%- endif -%}
 
     {{ content_for_header }}
+    <style>
+      @font-face {
+          font-family: 'TT Norms Pro Trial';
+          src: url({{'TTNormsProTrial-Md.eot' | file_url }});
+          src: url({{'TTNormsProTrial-Md.eot?#iefix' | file_url }}) format('embedded-opentype'),
+              url({{'TTNormsProTrial-Md.woff2' | file_url }}) format('woff2'),
+              url({{'TTNormsProTrial-Md.woff' | file_url }}) format('woff'),
+              url({{'TTNormsProTrial-Md.ttf' | file_url }}) format('truetype');
+          font-weight: 500;
+          font-style: normal;
+          font-display: swap;
+      }
 
+        @font-face {
+          font-family: 'TT Norms Pro Trial';
+          src: url({{ 'TTNormsProTrial-DmBd.eot' | file_url }});
+          src: url({{ 'TTNormsProTrial-DmBd.eot?#iefix' | file_url }}) format('embedded-opentype'),
+              url({{ 'TTNormsProTrial-DmBd.woff2' | file_url }}) format('woff2'),
+              url({{ 'TTNormsProTrial-DmBd.woff' | file_url }}) format('woff'),
+              url({{ 'TTNormsProTrial-DmBd.ttf' | file_url }}) format('truetype'),
+              url({{ 'TTNormsProTrial-DmBd.svg#TTNormsProTrial-DmBd' | asset_url }}) format('svg');
+          font-weight: 600;
+          font-style: normal;
+          font-display: swap;
+      }
+      
+      @font-face {
+          font-family: 'TT Norms Pro Trial';
+          src: url({{ 'TTNormsProTrial-Bd.eot' | file_url }});
+          src: url({{ 'TTNormsProTrial-Bd.eot?#iefix' | file_url }}) format('embedded-opentype'),
+              url({{ 'TTNormsProTrial-Bd.woff2' | file_url }}) format('woff2'),
+              url({{ 'TTNormsProTrial-Bd.woff' | file_url }}) format('woff'),
+              url({{ 'TTNormsProTrial-Bd.ttf' | file_url }}) format('truetype'),
+              url({{ 'TTNormsProTrial-Bd.svg#TTNormsProTrial-Bd' | asset_url }}) format('svg');
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
+      }
+    </style>
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
@@ -50,6 +88,9 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
+    {% if page.handle == 'landing-page'%}
+      {{ 'landing_page.css' | asset_url | stylesheet_tag }}
+    {% endif %}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
 
@@ -91,8 +132,9 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="icon" type="image/x-icon" href="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/favicon.svg?v=1738155534">
   </head>
 
