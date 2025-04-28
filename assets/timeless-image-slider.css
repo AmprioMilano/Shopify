@@ -8,10 +8,10 @@
     opacity: 1 !important;
 }
 .timeless-img-slider .slide_img img {
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    height: auto;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  height: 425px;
 }
 .timeless-img-slider .swiper-button-next:after,.timeless-img-slider .swiper-button-prev:after{
   content:unset;
