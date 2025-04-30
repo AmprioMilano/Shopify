@@ -22,11 +22,11 @@
           <div class="row_container flex-{{ block.settings.flex-direction }}">
            {% if  block.settings.image1 != blank and block.settings.image2 != blank and block.settings.image3 != blank %}
             <div class="image_container grid-container">
-              <img class="large-image" src="{{ block.settings.image1 | img_url: '500x' }}" width="{{ block.settings.image1.width }}" height="{{ block.settings.image1.height }}" alt="{{ block.settings.image1.alt }}" loading="lazy">
-              <img class="small-top" src="{{ block.settings.image2 | img_url: '500x' }}" width="{{ block.settings.image2.width }}" height="{{ block.settings.image2.height }}" alt="{{ block.settings.image2.alt }}" loading="lazy">
-              <img class="small-bottom" src="{{ block.settings.image3 | img_url: '500x' }}" width="{{ block.settings.image3.width }}" height="{{ block.settings.image3.height }}" alt="{{ block.settings.image3.alt }}" loading="lazy">
-              <img class="small-top" src="{{ block.settings.image4 | img_url: '500x' }}" width="{{ block.settings.image2.width }}" height="{{ block.settings.image2.height }}" alt="{{ block.settings.image2.alt }}" loading="lazy">
-              <img class="small-bottom" src="{{ block.settings.image5 | img_url: '500x' }}" width="{{ block.settings.image3.width }}" height="{{ block.settings.image3.height }}" alt="{{ block.settings.image3.alt }}" loading="lazy">
+              <img class="large-image" src="{{ block.settings.image1 | img_url:'master' }}" alt="{{ block.settings.image1.alt }}" loading="lazy">
+              <img class="small-top" src="{{ block.settings.image2 | img_url:'master' }}" alt="{{ block.settings.image2.alt }}" loading="lazy">
+              <img class="small-bottom" src="{{ block.settings.image3 | img_url:'master' }}" alt="{{ block.settings.image3.alt }}" loading="lazy">
+              <img class="small-top" src="{{ block.settings.image4 | img_url:'master' }}" alt="{{ block.settings.image4.alt }}" loading="lazy">
+              <img class="small-bottom" src="{{ block.settings.image5 | img_url:'master' }}" alt="{{ block.settings.image5.alt }}" loading="lazy">
             </div>
             {% endif %}
             <div class="content text_container text-align-{{ block.settings.alignment-3 }}">

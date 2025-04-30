@@ -60,7 +60,7 @@
             {% if block.settings.image != blank %}
             <div class="swiper-slide">
               <div class="image media-box" >
-                  <img src="{{ block.settings.image | image_url: width: '500x' }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" alt="{{ block.settings.image.alt }}">
+                  <img src="{{ block.settings.image | img_url:'master' }}" alt="{{ block.settings.image.alt }}">
               </div>
             </div>
             {% endif %}

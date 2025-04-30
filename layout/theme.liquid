@@ -88,9 +88,9 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
-    {% if page.handle == 'landing-page'%}
-      {{ 'landing_page.css' | asset_url | stylesheet_tag }}
-    {% endif %}
+    
+    {{ 'landing_page.css' | asset_url | stylesheet_tag }}
+    
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
 
