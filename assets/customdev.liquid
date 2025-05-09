@@ -1,0 +1,23 @@
+<style>
+.footer--pattern {
+  background-color: #3B6D58;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer--pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url({{ 'footer_pattern.svg' | asset_url }}) repeat-x top center;
+  background-size: 100vw auto;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer--pattern > * {
+  position: relative;
+  z-index: 1;
+}
+</style>

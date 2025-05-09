@@ -1,0 +1,51 @@
+<div class="about-sec about-sec-home">
+    <div class="container d-fx jc-sb">
+        <div class="about-section--title hide-on-desktop">{{ section.settings.title }}</div>
+        <div class="about-sec--image"> 
+          
+            
+            {% assign img =  section.settings.image  %}
+            <img 
+              src="{{ img.src | img_url : '700x' }}"
+               alt="{{ img.src.alt | escape }}"  
+                loading="lazy" 
+              width=""
+              height=""
+            >
+            
+        </div>
+        <div class="about-section--text">
+            <div class="about-section--title hide-on-mobile">{{ section.settings.title }}</div>
+            <p>{{ section.settings.paragraph }}</p>
+            <a href="{{ section.settings.link }}" class="tdn-on-hover">Learn More</a>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "About",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+      },
+      {
+        "type": "richtext",
+        "id": "paragraph",
+        "label": "Paragraph"
+      },
+      {
+        "type": "text",
+        "id": "link",
+        "label": "Link",
+      },
+     
+    ]
+  }
+{% endschema %}

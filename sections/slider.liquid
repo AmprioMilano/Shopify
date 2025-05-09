@@ -1,0 +1,80 @@
+<div class="home-slider">
+    <div class="swiper homeSwiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+                <a href="{{ block.settings.slide_link }}" class="slide-link">
+                  {% if block.settings.video %}
+                    {{ block.settings.video | video_tag: playsinline: true, autoplay: true, loop: true, muted: true, controls: false }}
+                  {% else %}
+                    <img class="desk-image" src="{{ block.settings.image | img_url : '2000x'  }}" alt="" width="" height="" loading="lazy" >
+                    <img class="mob-image" src="{{ block.settings.image_mob | img_url : '800x'  }}" alt="" width="" height="" loading="lazy" >
+                  {% endif %}
+                </a>
+                <div class="container slider-content">
+                    <a href="{{ block.settings.slide_link }}">{{ block.settings.slide_title }}</a>
+                    {{ block.settings.paragraph }} 
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</div>
+  <style>
+    
+    @media screen and (min-width: 768px){
+      img.mob-image {
+        display: none;
+      }  
+    }
+    @media screen and (max-width: 767px){
+      img.desk-image {
+        display: none;
+      }
+    }
+    </style>
+{% schema %} 
+{
+  "name":"Slider",
+  "tag":"section",
+  "class":"slider",
+  "blocks":[
+     {
+        "name":"Slide",
+        "type":"slide",
+        "settings":[
+          {
+            "type":"image_picker",
+            "id":"image",
+            "label":"Image"
+          },
+          {
+            "type":"image_picker",
+            "id":"image_mob",
+            "label":"Mobile Image"
+          },
+          {
+            "type":"video",
+            "id":"video",
+            "label":"Video"
+          },
+          {
+            "type":"text",
+            "id":"slide_title",
+            "label":"Slide Title"
+          },
+          {
+            "type":"url",
+            "id":"slide_link",
+            "label":"Slide Link"
+          },
+          {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Paragraph"
+          }
+        ]
+     },
+  ]
+}
+{% endschema %}

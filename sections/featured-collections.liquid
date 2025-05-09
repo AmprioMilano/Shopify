@@ -1,0 +1,65 @@
+<div class="featured-coll">
+  <div class="container hide-on-desktop">
+        <div class="section-header d-fx jc-sb">
+            <div>
+                <p>{{ section.settings.title }}</p>
+            </div>
+            <div>
+                <a class="tdu-on-hover" href="/collections/{{collections.special-occasions.handle}}">See All</a>
+            </div>
+        </div>
+    </div>
+    <div class="container feat-cont d-fx jc-sb">
+        <div class="feat-title hide-on-mobile">
+            Featured Collections
+        </div>
+        {% for block in section.blocks %}
+          {% assign img = block.settings.col_image  %}
+        <div class="featured-item">
+            <a href="{{ block.settings.col_link }}">
+                <img src="{{ block.settings.col_image | img_url : '600x' }}" alt="" loading="lazy"  >
+            </a>
+            <a href="{{ block.settings.col_link }}" class="featured-title">{{ block.settings.col_title }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %} 
+{
+  "name":"Featured Collections",
+  "tag":"section",
+  "class":"featured-collections",
+  "settings": [
+    
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+    },
+  ],
+  "blocks":[
+     {
+        "name":"Collection",
+        "type":"text",
+        "settings":[
+          {
+            "type":"image_picker",
+            "id":"col_image",
+            "label":"Image"
+          },
+          {
+            "type":"text",
+            "id":"col_title",
+            "label":"Title"
+          },
+          {
+            "type":"url",
+            "id":"col_link",
+            "label":"Link"
+          },
+        ]
+     },
+  ]
+}
+{% endschema %}

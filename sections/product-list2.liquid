@@ -1,0 +1,68 @@
+<div class="products-list products-list2">
+    <div class="container">
+        <div class="section-header d-fx jc-sb">
+            <div>
+                <p>{{ section.settings.title }}</p>
+            </div>
+            <div>
+                <a href="/collections/{{ section.settings.slug }}" class="tdu-on-hover">See All</a>
+            </div>
+        </div>
+    </div>
+      {% assign slug = section.settings.slug %}
+    
+    <div class="container product-items d-fx jc-sb fw-w">
+        {%- for product in collections[slug].products limit: 5 -%}
+            
+            {%- assign featured_image = product.featured_image -%}
+            {%- assign selected_or_first_available_variant = product.selected_or_first_available_variant -%}
+            {%- assign variant_url = '' -%}
+            {%- if product.selected_or_first_available_variant -%}
+                {%- assign variant_url = '?variant=' | append: product.selected_or_first_available_variant.id -%}
+            {%- endif -%}
+            {% if product.selected_variant %}
+                {% assign selected_or_first_available_variant = product.selected_variant %}
+                {% assign product_price             = selected_or_first_available_variant.price %}
+                {% assign product_compare_at_price  = selected_or_first_available_variant.compare_at_price %}
+                {% if selected_or_first_available_variant.image %}
+                    {% assign featured_image = selected_or_first_available_variant.image %}
+                {% endif %}
+            {% endif %}
+            {%- assign variants_count = product.variants | size -%}
+            <div class="products-item">
+                <a href="{{ root_url }}{{ product.url }}">
+                    <img src="{{ featured_image |  img_url : '400x'  }}" alt="" loading="lazy"  width="" height="" >
+                </a>
+                
+                <div class="product-details--top">
+                    <a href="{{ root_url }}{{ product.url }}" class="product-title">{{ product.title }}</a>
+                    <div class="pr-price hide-on-mobile">{{ product.price |  money_with_currency }}</div>
+                </div>
+                
+                <div class="product-details">
+                    {{product.metafields.product_settings.material}} — {{ product.metafields.product_settings.size }} <br>
+                    {{ product.metafields.product_settings.brand }}
+                    <div class="pr-price hide-on-desktop">{{ product.price |  money_with_currency }}</div>
+                </div>
+                
+            </div>
+        {%- endfor -%}
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Product List 2",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+      },
+      {
+        "type": "text",
+        "id": "slug",
+        "label": "Slug",
+      },
+    ]
+  }
+{% endschema %}

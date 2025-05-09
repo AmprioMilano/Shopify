@@ -1,0 +1,323 @@
+<footer class="footer footer--pattern">
+  <div class="container d-fx jc-sb">
+    <div class="footer-left">
+      <a href="#" class="logo-footer">
+        <img src="https://cdn.shopify.com/s/files/1/0592/5152/3702/files/AMPRIO_LOGO_WHITE.svg?v=1735312597">
+      </a>
+    </div>
+    <div class="footer-right">
+      <div class="footer-right-col-2 hide-on-desktop">
+        <h4>PRODUCTS</h4>
+        <ul>
+          <li><a class="tdu-on-hover" href="/collections/tableware">Tableware</a></li>
+          <li><a class="tdu-on-hover" href="/collections/decoration">Decoration</a></li>
+          <li><a class="tdu-on-hover" href="/collections/outdoor">Outdoor</a></li>
+          <li><a class="tdu-on-hover" href="/collections/">Collections</a></li>
+          <li><a class="tdu-on-hover" href="/collections/horeca">HoReCa</a></li>
+        </ul>
+        <br>
+        <a class="tdu-on-hover" href="/collections/new-in">Shop All</a>
+      </div>
+      <div class="footer-right-col-1">
+        <h4>INFORMATION</h4>
+        <ul>
+          <li><a class="tdu-on-hover" href="/pages/about">About</a></li>
+          <li><a class="tdu-on-hover" href="/pages/faq">FAQ</a></li>
+          <li><a class="tdu-on-hover" href="/pages/contact">Contact</a></li>
+          <li><a class="tdu-on-hover" href="/pages/shipping-policy">Shipping Policy</a></li>
+          <li><a class="tdu-on-hover" href="/pages/return-policy">Return Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-right-col-2 hide-on-mobile">
+        <h4>PRODUCTS</h4>
+        <ul>
+          <li><a class="tdu-on-hover" href="/collections/tableware">Tableware</a></li>
+          <li><a class="tdu-on-hover" href="/collections/decoration">Decoration</a></li>
+          <li><a class="tdu-on-hover" href="/collections/outdoor">Outdoor</a></li>
+          <li><a class="tdu-on-hover" href="/collections/">Collections</a></li>
+          <li><a class="tdu-on-hover" href="/collections/horeca">HoReCa</a></li>
+        </ul>
+        <br>
+        <a class="tdu-on-hover" href="/collections/shop">Shop All</a>
+      </div>
+      <div class="footer-right-col-3">
+        <h4>CONTACT</h4>
+        <p>
+          T. <a class="tdu-on-hover" href="tel:+971 52 177 3471 ">+971 52 177 3471</a> <br>
+          E. <a class="tdu-on-hover" href="mailto:info@amprio.ae">info@amprio.ae</a> <br>
+          <a class="tdu-on-hover" href="#">@ampriomilano</a> <br><br class="hide-on-mobile">
+          <strong>Office:</strong><br> <a class="tdu-on-hover" href="https://www.google.com/maps/search/?api=1&query=1802+Ontario+Tower,+Business+Bay,+Dubai+UAE" target="_blank">1802 Ontario Tower, Business Bay, Dubai UAE</a> <br>
+          <br> <a class="tdu-on-hover" href="https://wa.me/971521773471" target="_blank">WhatsApp</a> / <a class="tdu-on-hover" href="https://www.noon.com/p-240037" target="_blank">Noon</a> <br class="hide-on-mobile"><br class="hide-on-mobile"><br>
+          <a class="tdu-on-hover" href="#">Subscribe our Newsletter</a>
+        </p>
+      </div>
+    
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom d-fx jc-sb">
+      <div class="footer-bottom--left">Copyright @ 2025 Amprio Milano LLC</div>
+      <div class="footer-bottom--right">
+        <ul class="d-fx">
+          <li><a class="tdu-on-hover" href="/pages/terms-and-conditions">Terms and Conditions</a></li>
+          <li><a class="tdu-on-hover" href="/pages/privacy-policy/">Privacy Policy</a></li>
+          <li><a class="tdu-on-hover" href="/pages/cookies/">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  
+  $(document).ready(function(){
+    $('.mob-sort li').click(function(){
+      $('.mob-sort').toggleClass('active-sort');
+    });
+    $('.mob-sort li a.active').click(function(e){
+      e.preventDefault();
+    });
+    $('.whatsapp-share').attr('href','https://wa.me/?text='+window.location.href);
+    $('.mail-share').attr('href','mailto:?subject=I wanted you to see this site&body='+window.location.href);
+    $('.header--right ul li:first-child a').click(function(e){
+      e.preventDefault();
+      $('.slidecarthq-overlay').addClass('open');
+      $('.gl-d-searchbox').addClass('active');
+    });
+    $('.close-search-modal').click(function(){
+      $('.slidecarthq-overlay').removeClass('open');
+      $('.gl-d-searchbox').removeClass('active');
+    });
+    $(document).on('click','.slidecarthq-overlay', function(){
+      $('.slidecarthq-overlay').removeClass('open');
+      $('.gl-d-searchbox').removeClass('active');
+    });
+    $(document).on('click', '.card.card--standard.card--media img',function(){
+      $(this).parent().parent().parent().parent().children('.card__content').children('.card__information').children('h3').children('a').trigger('click');
+    });
+    
+
+    $('.header-cart').click(function(e){
+      e.preventDefault();
+      $('.slidecarthq-overlay, .slidecarthq.checkpoint').addClass('open');
+      $('body').css('overflow','hidden');
+    });
+    $(document).on('click', '.slidecarthq-overlay.open,#slidecarthq header.header button', function(){
+      $('.slidecarthq-overlay, .slidecarthq.checkpoint').removeClass('open');
+      $('body').css('overflow','auto');
+    });
+            
+    var test = {{ product.metafields.product_settings.material | json }}
+    var variantSize = {{ product.selected_variant.metafields.product_settings.variant_size | json }}
+    var globalSize = {{ product.metafields.product_settings.size | json }}
+    console.log('variantSize: ' + variantSize + ' ' + 'Global Size: ' + globalSize);
+    $('select[name="options[Size]"]').on('change', function(){
+      if(variantSize != ''){
+        var variantSize = {{ product.selected_variant.metafields.product_settings.variant_size | json }}
+        var globalSize = {{ product.metafields.product_settings.size | json }}
+        console.log(variantSize);
+      }
+      else {
+        console.log(globalSize);
+      }
+    });
+    
+  });
+
+  
+                
+  if($(window).width() < 992){
+    $(document).on('click','.filters', function() {  
+
+    $('#gf-tree').prepend('<div class="gf-tree-header"><div>Filters</div><div class="close-modal">Close</div></div>');
+    $('#gf-tree').append('<div class="gf-tree-footer"><div><a href="/collections/shop">Clear All</a></div><div class="apply-filter"><span>Apply Filters</span></div></div>');
+    $('#gf-tree').show();
+    $('.cat-title').addClass('active');
+    $("html, body").animate({ scrollTop: 0 }, 'fast');
+    $('body').addClass('o-h');
+  });
+  
+  $(document).on('click','.close-modal', function() {  //this work perfectly
+    $('#gf-tree').hide();
+    $('.cat-title').removeClass('active');
+    $('body').removeClass('o-h');
+  });
+  $(document).on('click','.apply-filter', function() {  //this work perfectly
+    $('#gf-tree').hide();
+    $('.cat-title').removeClass('active');
+    $('body').removeClass('o-h');
+  });
+
+  $('.mob-nav-wrap').click(function(){
+    $('.hide-on-desktop.mobile-menu').fadeToggle();
+    $(this).toggleClass('active');
+    $('.header').toggleClass('mob-menu-active');
+    $('.mob-nav.hide-on-desktop').toggleClass('active');
+  });
+  }
+  else {
+    $(document).on('click','.filters', function() {
+      $('.gf-filter-contents-inner').append('<div class="gf-tree-footer"><div class="apply-filter"><span>Apply Filters</span></div><div><a href="/collections/shop">Clear All</a></div></div>');
+      $('#gf-tree').show();
+      $('.cat-title').addClass('active');
+      $('body').addClass('o-h');
+      $('body').addClass('offcanvas-open');
+    });
+    setInterval(() => {
+      if (!$('.gf-tree-footer').length) {
+        $('.gf-filter-contents-inner').append('<div class="gf-tree-footer"><div class="apply-filter"><span>Apply Filters</span></div><div><a href="/collections/shop">Clear All</a></div></div>');
+      }
+      
+    }, 100);
+    $(document).on('click','.close-modal', function() {  //this work perfectly
+      $('#gf-tree').hide();
+      $('.cat-title').removeClass('active');
+      $('body').removeClass('o-h');
+      $('body').removeClass('offcanvas-open');
+    });
+    $(document).on('click','.apply-filter', function() {  //this work perfectly
+      $('#gf-tree').hide();
+      $('.cat-title').removeClass('active');
+      $('body').removeClass('o-h');
+      $('body').removeClass('offcanvas-open');
+    });
+    
+  }
+  
+  $(document).ready(function(){
+    
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+        return false;
+    };
+    var tech = getUrlParameter('sort_by');
+    console.log(tech);
+    
+    $('.sort-dropdown span').each(function(){
+      if($(this).data('sort') == tech){
+        var sText = $(this).text();
+        $('.sort > span').text(sText);
+      }
+    });
+    $('.sort > span').click(function(){
+      $('.sort-dropdown').fadeToggle();
+    });
+    $('.sort-mobile > span').click(function(){
+      $('.sort-mobile .sort-dropdown').fadeToggle();
+    });
+    $('.sort .sort-dropdown span').click(function(){
+      var sortTitle = $(this).text();
+      $('.sort > span').text(sortTitle);
+      $('.sort-dropdown').fadeOut();
+    });
+    $('.sort-mobile .sort-dropdown span').click(function(){
+      var sortTitle = $(this).text();
+      $('.sort-mobile > span').text(sortTitle);
+      $('.sort-dropdown').fadeOut();
+    });
+    
+    
+    var $temp = $("<input>");
+    var $url = $(location).attr('href');
+    
+    $('.clipboard').on('click', function(e) {
+      e.preventDefault();
+      $("body").append($temp);
+      $temp.val($url).select();
+      document.execCommand("copy");
+      $temp.remove();
+      $(".clipboard").text("Link Copied");
+    });
+    if($(window).width() > 992){
+        var swiper = new Swiper(".product-images-slider", {
+          effect: 'fade',
+          loop: true,
+          hashNavigation: {
+            watchState: true,
+          },
+          // Navigation arrows
+          navigation: {
+            nextEl: '.next',
+            prevEl: '.prev',
+          },
+        });
+        
+      }
+    $(window).scroll(function(){
+      var sticky = $('.header'),
+      scroll = $(window).scrollTop();
+      if($(window).width() > 992){
+        if (scroll >= 248) {
+          sticky.addClass('fixed'); $('.top-header').css('margin-bottom','74px');
+          $('body').css('padding-top','127.27px');
+        }
+        else {
+          sticky.removeClass('fixed');
+          $('.top-header').css('margin-bottom','0px');
+          $('body').css('padding-top','0px');
+        }
+      }
+      else {
+        if (scroll >= 96) {
+          sticky.addClass('fixed'); $('.top-header').css('margin-bottom','60px');
+        }
+        else {
+          sticky.removeClass('fixed');
+          $('.top-header').css('margin-bottom','0px');
+        }
+      } 
+  });
+    $(document).on('change','select#quantity',function(){
+      var qty = parseInt($('select#quantity').val());
+      var prPrice = parseInt($('.product__title .price-item.price-item--regular').text());
+      $('.product-form__buttons .price-item--regular').text(prPrice * qty + ' AED');
+    });
+    $(document).on('change','.select__select',function(){
+      setTimeout(() => {
+        var qty = parseInt($('select#quantity').val());
+        var prPrice = parseInt($('.product__title .price-item.price-item--regular').text());
+        $('.product-form__buttons .price-item--regular').text(prPrice * qty + ' AED');
+      }, 500);
+    });
+    $('.filters').click(function(){
+        $('body').toggleClass('offcanvas-open');
+        $('.gf-filter-contents-inner').append('<div class="close-btn"><div>');  
+    });
+    $(document).on('click','.close-btn', function() {  //this work perfectly
+      $('body').removeClass('offcanvas-open');
+    });
+    $('#quantity').on('change', function(){
+      var qtyVal = $(this).val();
+      $('.quantity__input').val(qtyVal);
+    });
+    $('.details-item h4').click(function(){
+      $(this).next('.details-text').slideToggle();
+      $(this).children('.plus-minus').toggleClass('active');
+    });
+    $('.close-gallery-popup').click(function(){
+      $('.gallery-popup').css({"opacity": "0","left": "-9999px","visibility": "hidden"});
+    });
+    $(document).on('click','.global-media-settings img',function(){
+      $('.gallery-popup').css(
+        {
+          "opacity": "1",
+          "left": "0",
+          "visibility": "visible",
+        }
+      );
+    });
+  });
+  
+  
+</script>
