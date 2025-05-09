@@ -17,9 +17,4 @@ jobs:
         run: curl -s https://shopify.github.io/themekit/scripts/install.py | sudo python
 
       - name: Deploy theme with Theme Kit
-        run: |
-          theme deploy \
-            --password=shptka_b434d21aadc5e041f4e6c57c205cbe0c \
-            --store=8344ca-27.myshopify.com \
-            --themeid=131309338742
-            --allow-live
+        run: theme deploy --password=shptka_b434d21aadc5e041f4e6c57c205cbe0c --store=8344ca-27.myshopify.com --themeid=131309338742 --allow-live
