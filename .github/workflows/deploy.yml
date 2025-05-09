@@ -3,7 +3,7 @@ name: Deploy Shopify Theme
 on:
   push:
     branches:
-      - main   # или укажи свою ветку, если используешь другую
+      - main 
 
 jobs:
   deploy:
@@ -23,4 +23,5 @@ jobs:
           shopify theme push \
             --password shptka_b434d21aadc5e041f4e6c57c205cbe0c \
             --store 8344ca-27.myshopify.com \
+            --theme-id=131309338742 \
             --force
