@@ -1,0 +1,26 @@
+name: Deploy Shopify Theme
+
+on:
+  push:
+    branches:
+      - main   # или укажи свою ветку, если используешь другую
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Shopify CLI
+        run: npm install -g @shopify/cli @shopify/theme
+
+      - name: Deploy theme to Shopify
+        env:
+          SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
+        run: |
+          shopify theme push \
+            --password shptka_b434d21aadc5e041f4e6c57c205cbe0c \
+            --store 8344ca-27.myshopify.com \
+            --force
