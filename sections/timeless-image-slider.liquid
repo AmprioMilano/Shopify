@@ -1,0 +1,203 @@
+{{ 'timeless-image-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+   .section-{{ section.id }}-padding{
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+  @media screen and (min-width: 750px){
+    .section-{{ section.id }}-padding{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+.content.text-align-center {text-align: center;}
+.content.text-align-left {text-align: start;}
+.content.text-align-right {text-align: end;}
+
+
+{%- endstyle -%}
+
+<section class="section-{{ section.id }}-padding section-{{ section.id }}-margin ">
+  <div class="page-width page-width-landing">
+        <div class="content main_heading text-align-{{ section.settings.alignment }}">
+         {%- if section.settings.inline_richtext != blank -%}
+           <h2>{{ section.settings.inline_richtext }}</h2>
+         {%- endif -%}
+          {%- if section.settings.sub_text != blank -%}
+           <p>{{ section.settings.sub_text }}</p>
+         {%- endif -%}
+          <div class="Slider_wrapper_timeless">
+          <div class="swiper timeless_swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper ">
+              {% for block in section.blocks %}
+              <div class="swiper-slide timeless_slides">
+                <div class="slide_img">
+                  <img src="{{ block.settings.slideimg | img_url:'master' }}" alt="{{ block.settings.slideimg.alt }}">
+                </div>
+              </div>
+             {% endfor %}
+            </div>
+          </div>
+          <div class="slider_controls">
+            <div class="swiper-button-prev">{% render 'swiper_icon_left' %}</div>
+            <div class="swiper-button-next">{% render 'swiper_icon_right' %}</div>
+          </div>
+        </div>
+          <div class="sub_para_text">
+          {%- if section.settings.paratext != blank -%}
+             <p>{{ section.settings.paratext }}</p>
+          {% endif %}
+          </div>
+         {%- if section.settings.button_url != blank -%}
+         <div class="custom-button">
+           <a class="btn" href="{{ section.settings.button_url }}">{{ section.settings.button_label }}</a>
+         </div>
+         {%- endif -%}
+       </div>
+
+  </div>
+</section>
+ <script>
+ 
+  var swiper = new Swiper('.timeless_swiper', {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".timeless-img-slider .swiper-button-next",
+    prevEl: ".timeless-img-slider .swiper-button-prev",
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  }
+  
+})
+</script>
+{% schema %}
+  {
+    "name": "Timeless Image Slider",
+    "class": "timeless-img-slider",
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "inline_richtext",
+        "label": "Content"
+      },
+      {
+        "type": "text",
+        "id": "sub_text",
+        "label": "Sub Text"
+      },
+      {
+        "type": "richtext",
+        "id": "paratext",
+        "label": "Para Text"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button Url"
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Content alignment",
+        "options": [
+          { "value": "center", "label": "Center" },
+          { "value": "left", "label": "Left" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "header",
+        "content": "Padding and Margin"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Padding and Margin Mobile"
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+    ],
+    "blocks": [
+      {
+        "type":"image",
+        "name":"Image",
+        "settings": [
+          {
+             "type": "image_picker",
+            "id":"slideimg",
+            "label":"Image"
+          }
+        ]
+      }
+    ],
+     "presets": [
+      {
+        "name": "Timeless Image Slider"         
+     }
+   ]
+  }
+{% endschema %}
+
+

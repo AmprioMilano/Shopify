@@ -305,6 +305,11 @@
         "type": "shopify://apps/slide-cart-by-amp/blocks/app-embed/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
         "disabled": false,
         "settings": {}
+      },
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {

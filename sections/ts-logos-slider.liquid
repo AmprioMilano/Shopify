@@ -1,0 +1,137 @@
+{{ "ts-logos-slider.css" | asset_url | stylesheet_tag }}
+
+<div class="ts-logos-slider section-{{ section.id }}">
+  <div class="ts-logos-slider__wrapper page-width page-width-landing">
+    {% if section.settings.title != blank %}
+      <h2 class="ts-logos-slider__title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="ts-logos-slider__blocks swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% capture block_content %}
+            <div class="ts-logos-slider__media">
+              {% if block.settings.logo != blank %}
+                {{ block.settings.logo | image_url: width: 500 | image_tag }}
+              {% else %}
+                {{ 'product-1' | placeholder_svg_tag }}    
+              {% endif %}
+            </div>
+            {% if block.settings.label != blank %}
+              <p class="ts-logos-slider__label">{{ block.settings.label }}</p>
+            {% endif %}
+          {% endcapture %}
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="ts-logos-slider__block swiper-slide">
+              {{ block_content }}
+            </a>
+          {% else %}  
+            <div class="ts-logos-slider__block swiper-slide">
+              {{ block_content }}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="ts-logos-slider__controls">
+        <div class="ts-logos-slider__control" data-prev>{% render 'swiper_icon_left' %}</div>
+        <div class="ts-logos-slider__control" data-next>{% render 'swiper_icon_right' %}</div>
+      </div>
+    </div>
+
+    {% if section.settings.btn_label != blank %}
+      <a href="{{ section.settings.btn_link }}" class="ts-logos-slider__button">
+        {{ section.settings.btn_label }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% if section.blocks.size > 1 %}
+  <script>
+    (function () {
+      const section = document.querySelector(".section-{{ section.id }}");
+      const sliderElement = section.querySelector(".swiper");
+      const swiper = new Swiper(sliderElement, {
+        loop: false,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: section.querySelector("[data-next]"),
+          prevEl: section.querySelector("[data-prev]"),
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          550: {
+            slidesPerView: 2,
+            spaceBetween: 32
+          },
+          990: {
+            slidesPerView: 3,
+            spaceBetween: 68
+          }
+        }
+      });
+    })();
+  </script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "TS Logos slider",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Title"
+      },
+      {
+        "type": "text",
+        "id": "btn_label",
+        "label": "Button label",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Button link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "Label"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS Logos slider"
+      }
+    ]
+  }
+{% endschema %}

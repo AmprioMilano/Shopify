@@ -1,0 +1,241 @@
+{{ 'image-content-thumbnail-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+   .section-{{ section.id }}-padding{
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+  @media screen and (min-width: 750px){
+    .section-{{ section.id }}-padding{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+.content.text-align-center {text-align: center;}
+.content.text-align-left {text-align: start;}
+.content.text-align-right {text-align: end;}
+
+
+{%- endstyle -%}
+
+<section class="section-{{ section.id }}-padding section-{{ section.id }}-margin color-{{ section.settings.color_scheme }} gradient">
+  <div class="{% if section.settings.fullwidth %}page-width page-width-landing{% else %}full-content-col{% endif %}">
+	{%- if section.settings.inline_richtext != blank -%}
+       <div class="content text-align-{{ section.settings.alignment }}">
+         {%- if section.settings.sub_text != blank -%}
+           <span>{{ section.settings.sub_text }}</span>
+         {%- endif -%}
+         <h2>{{ section.settings.inline_richtext }}</h2>
+       </div>
+    {%- endif -%}
+
+    <div class="image-content-wrap flex-{{ section.settings.flex-direction }}">
+     <div class="image-content">
+          <div class="row_container {% if section.settings.fullwidth %}margin-block{% endif %}">
+            <div class="slidecontent">
+             <div class="main_text"><h2>{{ section.settings.main_text }}</h2></div>
+              <div class="main-list">{{ section.settings.richtext }}</div>
+              <div class="box">{{ section.settings.box_content }}</div>
+              <div class="flex-btn">
+                {% if section.settings.button_text != blank %}
+                <div class="btn-collection">
+                  <a class="button_coll button" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+                </div>
+                {% endif %}
+                
+                {% if section.settings.button_text2 != blank %}
+                <div class="btn-collection btn-second">
+                  <a class="button_coll button" href="{{ section.settings.button_url2 }}">{{ section.settings.button_text2 }}</a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+      </div>
+     
+    </div>
+       <div class="image-thumbnail swiper mySwiper-content">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+            <div class="swiper-slide">
+              <div class="image media-box" >
+                  <img src="{{ block.settings.image | img_url:'master' }}" alt="{{ block.settings.image.alt }}">
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+          <div class="slider_controls">
+            <div class="swiper-button-prev">{% render 'swiper_icon_left' %}</div>
+            <div class="swiper-button-next">{% render 'swiper_icon_right' %}</div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+    var swiper2 = new Swiper("#shopify-section-{{ section.id }} .mySwiper-content", {
+      spaceBetween: 10,
+      allowTouchMove: true, // Disable dragging/swiping
+      simulateTouch: true, // Prevent touch simulation
+      grabCursor: false,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: "#shopify-section-{{ section.id }} .swiper-button-next",
+        prevEl: "#shopify-section-{{ section.id }} .swiper-button-prev",
+      },
+    });
+  </script>
+  
+{% schema %}
+  {
+    "name": "Image Content Thumbnail",
+    "class": "image-content-thumbnail-section",
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "inline_richtext",
+        "label": "Content"
+      },
+      {
+        "type": "text",
+        "id": "sub_text",
+        "label": "Sub Text"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "text",
+        "id": "main_text",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "Content"
+      },
+      {
+        "type": "richtext",
+        "id": "box_content",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button Url"
+      },
+      {
+        "type": "text",
+        "id": "button_text2",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_url2",
+        "label": "Button Url"
+      },
+      {
+        "type": "checkbox",
+        "id": "fullwidth",
+        "label":"Section Container",
+        "default":true,
+      },
+       {
+        "type": "select",
+        "id": "flex-direction",
+        "label": "Image Direction",
+        "options": [
+          { "value": "row", "label": "Row" },
+          { "value": "row-reverse", "label": "Row Reverse" },
+        ],
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Content alignment",
+        "options": [
+          { "value": "center", "label": "Center" },
+          { "value": "left", "label": "Left" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "header",
+        "content": "Padding and Margin"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Padding and Margin Mobile"
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+    ],
+    "blocks":[
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+     "presets": [
+      {
+        "name": "Image Content Thumbnail"         
+     }
+   ]
+  }
+{% endschema %}
+

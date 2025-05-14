@@ -11,13 +11,668 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "image_content_thumbnail_slider_cnDR84": {
+      "type": "image_content_thumbnail_slider",
+      "blocks": {
+        "slide_KcB4YQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Baci-Milano-chic_zen-table-12_72f32140-6980-4a18-b5fd-fcc9224ee47d.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_KcB4YQ"
+      ],
+      "settings": {
+        "inline_richtext": "",
+        "sub_text": "",
+        "button_label": "",
+        "main_text": "Elevate Your Tableware Selection with Amprio Milano",
+        "richtext": "<ul><li>Premium Italian Design <\/li><li>Exclusive Access <\/li><li>Profitable Partnerships<\/li><\/ul>",
+        "box_content": "<p>We offer <strong>2025 Table Setting Trends: <\/strong>Bold, Eclectic, and Timeless Elegance From Porcelain to Premium Melamine<br\/><br\/>The <strong>widest selection <\/strong>of <strong>designer Tableware <\/strong>and <strong>Drinkware for outdoor spaces <\/strong>in the Persian Gulf Countries<\/p>",
+        "button_text": "More Information",
+        "button_url": "#",
+        "button_text2": "Get a Sample for free",
+        "button_url2": "#",
+        "fullwidth": false,
+        "flex-direction": "row",
+        "alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "partner_section_NTEgxt": {
+      "type": "partner_section",
+      "blocks": {
+        "column_mjphfJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/delivery_1.svg",
+            "title": "Direct Dubai \u2028Warehouse Supply",
+            "sub_title": "Fast, reliable, and cost-efficient deliveries."
+          }
+        },
+        "column_VGQkeK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/premium_2.svg",
+            "title": "Premium Quality \u2028at Mid-Range Prices",
+            "sub_title": "European craftsmanship at competitive rates."
+          }
+        },
+        "column_9HAwaH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/b2b.svg",
+            "title": "Tailored \u2028B2B Offers",
+            "sub_title": "Special deals for retailers and HoReCa businesses."
+          }
+        },
+        "column_BHAUgj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/XMLID_1864.svg",
+            "title": "Reduced Replacement Costs",
+            "sub_title": "Minimize expenses on broken tableware with our highly durable materials."
+          }
+        },
+        "column_KdPDPN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/picnic-table.svg",
+            "title": "Stand Out in Outdoor Service",
+            "sub_title": "Elevate your business with stylish, high-quality tableware designed for outdoor dining."
+          }
+        },
+        "column_EwfAP4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/economic.svg",
+            "title": "Increase the Average Check",
+            "sub_title": "Accent tableware enhances presentation, creating a premium dining experience that drives higher revenue"
+          }
+        }
+      },
+      "block_order": [
+        "column_mjphfJ",
+        "column_VGQkeK",
+        "column_9HAwaH",
+        "column_BHAUgj",
+        "column_KdPDPN",
+        "column_EwfAP4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "inline_richtext": "Why Partner with Amprio Milano?",
+        "sub_text": "Your gateway to authentic Italian tableware in the UAE and Gulf region.",
+        "alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "image_content_thumbnail_slider_8VJPKg": {
+      "type": "image_content_thumbnail_slider",
+      "blocks": {
+        "slide_rDGCVT": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC04820_dd260148-7d40-49d6-83c5-0157dedebc78.jpg"
+          }
+        },
+        "slide_eVf678": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AVANT-GUARD-26_d8b51cdd-6985-48d0-9cc7-49eafd37a9eb.jpg"
+          }
+        },
+        "slide_4trFpX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC04962-_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_rDGCVT",
+        "slide_eVf678",
+        "slide_4trFpX"
+      ],
+      "settings": {
+        "inline_richtext": "",
+        "sub_text": "",
+        "button_label": "",
+        "main_text": "Who Will Benefit from Partnering with Amprio Milano",
+        "richtext": "<p>HoReCa Sector Businesses and Suppliers looking for designed shapes and unique style in the market<\/p><ul><li><strong>Hotels and restaurants <\/strong>with outdoor terraces, pools, and spas.<\/li><li><strong>Beach clubs and yachts <\/strong>looking for safe yet stylish table settings.<\/li><li><strong>Event companies, caterers, and decorators <\/strong>organizing outdoor events and celebrations.<\/li><\/ul>",
+        "box_content": "",
+        "button_text": "More Information",
+        "button_url": "#",
+        "button_text2": "",
+        "button_url2": "",
+        "fullwidth": true,
+        "flex-direction": "row",
+        "alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "advantages_info_sec_ACHyGi": {
+      "type": "advantages_info_sec",
+      "blocks": {
+        "column_9nANLV": {
+          "type": "column",
+          "settings": {
+            "title": "Non-Toxic & Hypoallergenic",
+            "sub_title": "Safe for all age groups, including children"
+          }
+        },
+        "column_8EHWKV": {
+          "type": "column",
+          "settings": {
+            "title": "Odor & Stain Resistant",
+            "sub_title": "Maintains a fresh and pristine look over time."
+          }
+        },
+        "column_4jRcbx": {
+          "type": "column",
+          "settings": {
+            "title": "Lightweight & Easy to Handle",
+            "sub_title": "Reduces staff workload and enhances"
+          }
+        },
+        "column_CTnLch": {
+          "type": "column",
+          "settings": {
+            "title": "No Need for Annual Replacements",
+            "sub_title": "Durable tableware eliminates the costs of frequently replacing damaged dishes."
+          }
+        },
+        "column_HmefQK": {
+          "type": "column",
+          "settings": {
+            "title": "Cost-Effective",
+            "sub_title": "Minimizes replacement costs compared to traditional materials"
+          }
+        },
+        "column_CPkiLR": {
+          "type": "column",
+          "settings": {
+            "title": "Сomplete Table Setting Solutions",
+            "sub_title": "Full dining sets for a seamless and stylish table arrangement."
+          }
+        }
+      },
+      "block_order": [
+        "column_9nANLV",
+        "column_8EHWKV",
+        "column_4jRcbx",
+        "column_CTnLch",
+        "column_HmefQK",
+        "column_CPkiLR"
+      ],
+      "settings": {
+        "inline_richtext": "Advantages of Our Premium Melamine, Acrylic, and Polycarbonate Tableware",
+        "alignment": "center",
+        "padding_top": 104,
+        "padding_bottom": 100,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "timeless_image_slider_b9dMQC": {
+      "type": "timeless-image-slider",
+      "blocks": {
+        "image_j43NBQ": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/DSC04694_715a99bd-4113-4796-b995-c799aa979149.jpg"
+          }
+        },
+        "image_8ywHLx": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/AVANT-GUARD-27_9940ba22-9bb3-448f-a211-62b4e7efc476.jpg"
+          }
+        },
+        "image_WhGFNw": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/DSC04669_e212e534-fcc2-4ca8-833d-68be1841b671.jpg"
+          }
+        },
+        "image_rrjUGN": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/AVANT-GUARD-11_816f5c61-cb1b-4038-b51e-9c095f997bf9.jpg"
+          }
+        },
+        "image_D7DbFj": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/DSC04833_2ca5778e-fd90-4078-ab81-21a194181470.jpg"
+          }
+        },
+        "image_eQfXmT": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/DSC04959_a3d3183b-7c17-427a-920c-16708168e10f.jpg"
+          }
+        },
+        "image_6DQnNn": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/EEEE2818.jpg"
+          }
+        },
+        "image_3hG4q8": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/AVANT-GUARD-9_bc62dc7a-0879-4496-bdac-4b5529e265c9.jpg"
+          }
+        },
+        "image_HVM9zQ": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/DSC05027_ae067880-4596-49c9-9043-74ca5295601e.jpg"
+          }
+        },
+        "image_UtPD7X": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/AVANT-GUARD-10_a3edd7df-f3be-47e1-a1f7-508bd5a1866f.jpg"
+          }
+        },
+        "image_Y4iBep": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/DSC04794_cae99cb5-63ea-4e65-884c-e2afb5488feb.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_j43NBQ",
+        "image_8ywHLx",
+        "image_WhGFNw",
+        "image_rrjUGN",
+        "image_D7DbFj",
+        "image_eQfXmT",
+        "image_6DQnNn",
+        "image_3hG4q8",
+        "image_HVM9zQ",
+        "image_UtPD7X",
+        "image_Y4iBep"
+      ],
+      "settings": {
+        "inline_richtext": "Timeless Italian Tableware for Every Setting",
+        "sub_text": "Explore the stunning Baci Milano collections—where art meets function.",
+        "paratext": "<p>All collections are available for immediate order from our <strong>Dubai warehouse!<\/strong><\/p>",
+        "button_label": "Shop Online",
+        "button_url": "#",
+        "alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "custom_video_sec_yEWyyN": {
+      "type": "custom_video_sec",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video1": "shopify:\/\/files\/videos\/video.mp4",
+        "video2": "shopify:\/\/files\/videos\/video.mp4",
+        "cover_image": "shopify:\/\/shop_images\/image_8.png",
+        "cover_image_two": "shopify:\/\/shop_images\/image_9.png",
+        "description": "",
+        "full_width": true,
+        "headingone": "Premium Melamine",
+        "paratextone": "<p>Designed to mimic the elegance of porcelain<\/p>",
+        "headingtwo": "Premium Acrylic & Polycarbonate",
+        "paratexttwo": "<p>Crafted to replicate the brilliance of crystal.<\/p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 80,
+        "padding_bottom": 92,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "multirow_imagegrid_with_text_VUfpqt": {
+      "type": "multirow_imagegrid_with_text",
+      "blocks": {
+        "tab_hDWCGL": {
+          "type": "tab",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/EEEE2720_8ab21ad1-3be2-4548-8266-4b3b2417ae42.jpg",
+            "image2": "shopify:\/\/shop_images\/Baci-Milano-JOKE-outdoor-20_4405c41e-250b-4239-b13c-cf1d2b9721b7.jpg",
+            "image3": "shopify:\/\/shop_images\/DSC04615_73163299-5d3f-4150-bf98-fbaca83f3d2f.jpg",
+            "image4": "shopify:\/\/shop_images\/Aqua-Top-Baci-Milano-acrylic-1_fa0e9ceb-e6ca-4cd3-975e-b9ea861a835d.jpg",
+            "image5": "shopify:\/\/shop_images\/AVANT-GUARD-2_d24db58a-facd-46c1-8de8-280e4a7ea034.jpg",
+            "alignment-3": "left",
+            "flex-direction": "row-reverse",
+            "richtext-3": "<p>Within each collection, we offer a complete table setting, ensuring a seamless and elegant dining experience. Our sets include a full range of plate sizes, from appetizer and dinner plates to dessert and serving platters, allowing for a perfectly coordinated presentation. Every detail is designed to bring harmony and sophistication to your table. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_hDWCGL"
+      ],
+      "settings": {
+        "padding-top": 36,
+        "padding-bottom": 38,
+        "padding-top_mobile": 32,
+        "padding-bottom_mobile": 36
+      }
+    },
+    "image_content_thumbnail_slider_p8c6c4": {
+      "type": "image_content_thumbnail_slider",
+      "blocks": {
+        "slide_canADr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_23.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_canADr"
+      ],
+      "settings": {
+        "inline_richtext": "",
+        "sub_text": "",
+        "button_label": "",
+        "main_text": "Unlock Exclusive B2B Benefits with Amprio Milano",
+        "richtext": "",
+        "box_content": "<p><strong>Exclusive First Access to New Collections<\/strong><\/p><p>Stay ahead of the competition with priority access to the latest Baci Milano designs.<\/p><p><strong>Volume-Based Discounts<\/strong><\/p><p>The more you order, the better your margins—maximize your profits effortlessly.<br\/><\/p><p><strong>For prestigious hotels with a large room capacity<\/strong><\/p><p>We offer custom orders with a personalized design that emphasizes the hotel's unique identity.<\/p>",
+        "button_text": "Request Your Free Samples",
+        "button_url": "#",
+        "button_text2": "",
+        "button_url2": "",
+        "fullwidth": true,
+        "flex-direction": "row-reverse",
+        "alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 20,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "custom_image_with_text_Y9EHQJ": {
+      "type": "custom_image_with_text",
+      "blocks": {
+        "heading_YjN6dK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Feel the Luxury of Baci Milano",
+            "heading_size": "h0"
+          }
+        },
+        "text_H3EtVy": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Premium Materials with Practicality<\/li><li>Bold, Unique Collections for Every Taste<\/li><li>Affordability and Trend Responsiveness<\/li><\/ul><p>Request a free sample and experience Italian craftsmanship firsthand.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_pQ44HL": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get a Free Sample Today!",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YjN6dK",
+        "text_H3EtVy",
+        "button_pQ44HL"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DSC04883_350f6720-430a-4d9b-86c5-c33ad0cc18d1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "large",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "partnership_form_sec_tXVRei": {
+      "type": "partnership-form-sec",
+      "settings": {
+        "color_scheme": "",
+        "inline_richtext": "",
+        "sub_text": "",
+        "headingtext": "Let's Build a Profitable Partnership",
+        "paratext": "Fill out the form, and we’ll send you a personalized offer + free product samples!",
+        "button_label": "",
+        "button_url": "",
+        "alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 20,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "testimonial_sec_DBjD9Q": {
+      "type": "testimonial_sec",
+      "blocks": {
+        "image_6KbpEY": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/image_24.png",
+            "testimonial_heading": "Partner Name",
+            "sub_text_testimonial": "Amprio Milano has transformed our tableware offerings—high quality and reliable supply!\""
+          }
+        },
+        "image_Q3exxM": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/image_25.png",
+            "testimonial_heading": "Partner Name",
+            "sub_text_testimonial": "Exclusive Baci Milano access gives us a competitive edge!"
+          }
+        },
+        "image_3VTThp": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/image_26.png",
+            "testimonial_heading": "Partner Name",
+            "sub_text_testimonial": "Flexible payment terms and bulk discounts helped us grow our sales!\""
+          }
+        },
+        "image_iYgfVj": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/image_26.png",
+            "testimonial_heading": "Partner Name",
+            "sub_text_testimonial": "Flexible payment terms and bulk discounts helped us grow our sales!\""
+          }
+        },
+        "image_6TYQbE": {
+          "type": "image",
+          "settings": {
+            "slideimg": "shopify:\/\/shop_images\/image_25.png",
+            "testimonial_heading": "Partner Name",
+            "sub_text_testimonial": "Flexible payment terms and bulk discounts helped us grow our sales!\""
+          }
+        }
+      },
+      "block_order": [
+        "image_6KbpEY",
+        "image_Q3exxM",
+        "image_3VTThp",
+        "image_iYgfVj",
+        "image_6TYQbE"
+      ],
+      "settings": {
+        "inline_richtext": "Trusted by Leading Retailers & Hospitality Brands",
+        "sub_text": "",
+        "paratext": "",
+        "star_check": true,
+        "button_label": "Join Our Network",
+        "button_url": "#",
+        "alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "ts_logos_slider": {
+      "type": "ts-logos-slider",
+      "settings": {
+        "title": "Trusted by Leading Retailers & Hospitality Brands",
+        "btn_label": "Join Our Network",
+        "btn_link": "/"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/maison_logo.png",
+            "label": "MAISON REVKA DUBAI",
+            "link": "/",
+          }
+        },
+        "block_2": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/la_baia_logo.png",
+            "label": "LA BAIA DUBAI",
+            "link": "/",
+          }
+        },
+        "block_3": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/rigolatto_logo.png",
+            "label": "GIGI RIGOLATTO DUBAI",
+            "link": "/",
+          }
+        },
+        "block_4": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/maison_logo.png",
+            "label": "MAISON REVKA DUBAI",
+            "link": "/",
+          }
+        },
+        "block_5": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/la_baia_logo.png",
+            "label": "LA BAIA DUBAI",
+            "link": "/",
+          }
+        },
+        "block_6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/rigolatto_logo.png",
+            "label": "GIGI RIGOLATTO DUBAI",
+            "link": "/",
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6"
+      ]
+    },
+    "faq_info_sec_6HeaPy": {
+      "type": "faq_info_sec",
+      "blocks": {
+        "text_h44EVR": {
+          "type": "text",
+          "settings": {
+            "faq_infoheading": "Who can partner with Amprio Milano?",
+            "faq_info_text": "<p>Retailers, HoReCa businesses, and distributors in the Gulf region.<\/p>"
+          }
+        },
+        "text_RXgPXt": {
+          "type": "text",
+          "settings": {
+            "faq_infoheading": "How do I get exclusive access to new collections?",
+            "faq_info_text": "<p>Join our partner program, and you’ll receive priority product releases before the market.<\/p>"
+          }
+        },
+        "text_RA38qz": {
+          "type": "text",
+          "settings": {
+            "faq_infoheading": "What are the minimum order requirements?",
+            "faq_info_text": "<p>Our flexible volume-based discounts start from [insert MOQ details].<\/p>"
+          }
+        },
+        "text_mBhh9Y": {
+          "type": "text",
+          "settings": {
+            "faq_infoheading": "Do you offer custom payment plans?",
+            "faq_info_text": "<p>Yes! We provide tailored payment and shipping terms based on your order volume.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_h44EVR",
+        "text_RXgPXt",
+        "text_RA38qz",
+        "text_mBhh9Y"
+      ],
+      "settings": {
+        "inline_richtext": "Have Questions? We've Got Answers!",
+        "paratext": " Still have questions?",
+        "button_label": "Contact us",
+        "button_url": "shopify:\/\/pages\/contact",
+        "alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_content_thumbnail_slider_cnDR84",
+    "partner_section_NTEgxt",
+    "image_content_thumbnail_slider_8VJPKg",
+    "advantages_info_sec_ACHyGi",
+    "timeless_image_slider_b9dMQC",
+    "custom_video_sec_yEWyyN",
+    "multirow_imagegrid_with_text_VUfpqt",
+    "image_content_thumbnail_slider_p8c6c4",
+    "custom_image_with_text_Y9EHQJ",
+    "partnership_form_sec_tXVRei",
+    "testimonial_sec_DBjD9Q",
+    "ts_logos_slider",
+    "faq_info_sec_6HeaPy"
   ]
 }

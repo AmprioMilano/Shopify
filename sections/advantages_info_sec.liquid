@@ -1,0 +1,140 @@
+{%- style -%}
+   .section-{{ section.id }}-padding{
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+  @media screen and (min-width: 750px){
+    .section-{{ section.id }}-padding{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+.content.text-align-center {text-align: center;}
+.content.text-align-left {text-align: start;}
+.content.text-align-right {text-align: end;}
+{%- endstyle -%}
+
+<section class="section-{{ section.id }}-padding section-{{ section.id }}-margin ">
+  <div class="page-width-landing">
+	{%- if section.settings.inline_richtext != blank -%}
+       <div class="content main_heading text-align-{{ section.settings.alignment }}">
+         <h2>{{ section.settings.inline_richtext }}</h2>
+       </div>
+      {% endif %}
+      <div class="advantage_info_container">
+        {% for block in section.blocks %}
+          <div class="advantage_info_block">
+            {% if block.settings.title != blank or block.settings.subtitle != blank %}
+              <div class="advantage_info_text">
+                {% if block.settings.title != blank %}
+                  <h4>{{ block.settings.title }}</h4>
+                {% endif %}
+                {% if block.settings.sub_title != blank %}
+                  <p>{{ block.settings.sub_title }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Advantage Info Section",
+    "class": "advantage_info_section",
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "inline_richtext",
+        "label": "Content"
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Content alignment",
+        "options": [
+          { "value": "center", "label": "Center" },
+          { "value": "left", "label": "Left" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "header",
+        "content": "Padding and Margin"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+       {
+        "type": "header",
+        "content": "Padding and Margin Mobile"
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 200,
+        "step":2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+    ],
+     "blocks": [
+       {
+         "type": "column",
+         "name": "Column",
+         "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Content"
+            },
+            {
+              "type": "inline_richtext",
+              "id": "sub_title",
+              "label": "Sub Text"
+            },
+         ]
+       }
+     ],
+     "presets": [
+      {
+        "name": "Advantage Info Section"         
+     }
+   ]
+  }
+{% endschema %}
+
+

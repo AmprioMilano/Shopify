@@ -49,7 +49,7 @@ body {
 	line-height: 1;
     font-family: 'TT Norms Pro';
     font-size: 14px;
-    color: #111;
+    color: #000;
     letter-spacing: 0.28px;
 }
 ol, ul {
@@ -292,56 +292,35 @@ a.featured-title {
     background-color: transparent;
 }
 .footer {
-  padding: 31px 0 25px;
-  margin-top: 100px;
-  font-size: 14px;
-  line-height: 24px;
-  color: #fff;
-  font-weight: 300;
-  position: relative;
-  z-index: 1;
+    padding: 31px 0 25px;
+    background-color: #111;
+    /* margin-top: 100px; */
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 300;
 }
-
-.footer--pattern::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #214f42 url("https://ampriomilano.com/cdn/shop/t/4/assets/footer_pattern.svg?v=39739624138686835111744983955") repeat;
-  background-size: auto;
-  background-position: top center;
-  opacity: 0.1;
-  z-index: -1;
-  pointer-events: none;
+.logo-footer,h4 {
+    font-weight: 400;
 }
-
-.logo-footer, h4 {
-  font-weight: 400;
-}
-
 .footer h4 {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
-
 .footer a {
-  color: #fff;
+    color: #fff;
 }
-
-.footer-left,
-.footer-bottom--left {
-  width: 39.559%;
+.footer-left,.footer-bottom--left {
+    width: 39.559%;
 }
-
 .footer-right {
-  width: calc(60.441% - 12px);
-  display: flex;
-  justify-content: space-between;
-  padding-right: 100px;
+    width: calc(60.441% - 12px);
+    display: flex;
+    justify-content: space-between;
+    padding-right: 100px;
 }
-
 .footer-right-col-3 p a {
-  display: inline-block;
+    display: inline-block;
 }
-
 
 * {
     box-sizing: border-box;
@@ -663,11 +642,6 @@ html body .product--large:not(.product--no-media) .product__info-wrapper {
     font-size: 18px;
     letter-spacing: 0.36px;
     line-height: 24px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 .product__title {
     display: flex;
@@ -675,7 +649,7 @@ html body .product--large:not(.product--no-media) .product__info-wrapper {
     align-items: center;
 }
 .product__title .price {
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.26px;
     line-height: 24px;
     margin: 0;
@@ -1012,6 +986,7 @@ select#quantity {
 }
 .prod-det-top .price.price--large.price--show-badge span {
     letter-spacing: 0.28px;
+    font-size: 12px;
 }
 .prod-det-top {
     margin-top: -44px;
@@ -2532,7 +2507,7 @@ form.gl-d-searchbox {
         margin-bottom: 39px;
     }
     .footer {
-        margin-top: 80px;
+        /* margin-top: 80px; */
         padding: 21px 0 25px;
     }
     .footer h4 {
@@ -3677,18 +3652,6 @@ button.button.full.continue-shopping {
 .swiper-slide {
   position: relative;
   overflow: hidden;
-}
-
-.swiper-slide::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 60%; /* подгони под нужный размер */
-  width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
-  z-index: 1;
-  pointer-events: none;
 }
 
 @media screen and (max-width: 749px) {
