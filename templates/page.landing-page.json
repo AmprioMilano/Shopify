@@ -38,9 +38,9 @@
         "richtext": "<ul><li>Premium Italian Design </li><li>Exclusive Access </li><li>Profitable Partnerships</li></ul>",
         "box_content": "<p>We offer <strong>2025 Table Setting Trends: </strong>Bold, Eclectic, and Timeless Elegance From Porcelain to Premium Melamine<br/><br/>The <strong>widest selection </strong>of <strong>designer Tableware </strong>and <strong>Drinkware for outdoor spaces </strong>in the Persian Gulf Countries</p>",
         "button_text": "More Information",
-        "button_url": "#",
+        "button_url": "#wizard-validation-form",
         "button_text2": "Get a Sample for free",
-        "button_url2": "#",
+        "button_url2": "#wizard-validation-form",
         "fullwidth": false,
         "flex-direction": "row",
         "alignment": "center",
@@ -156,7 +156,7 @@
         "richtext": "<p>HoReCa Sector Businesses and Suppliers looking for designed shapes and unique style in the market</p><ul><li><strong>Hotels and restaurants </strong>with outdoor terraces, pools, and spas.</li><li><strong>Beach clubs and yachts </strong>looking for safe yet stylish table settings.</li><li><strong>Event companies, caterers, and decorators </strong>organizing outdoor events and celebrations.</li></ul>",
         "box_content": "",
         "button_text": "More Information",
-        "button_url": "#",
+        "button_url": "#wizard-validation-form",
         "button_text2": "",
         "button_url2": "",
         "fullwidth": true,
@@ -399,7 +399,7 @@
         "richtext": "",
         "box_content": "<p><strong>Exclusive First Access to New Collections</strong></p><p>Stay ahead of the competition with priority access to the latest Baci Milano designs.</p><p><strong>Volume-Based Discounts</strong></p><p>The more you order, the better your margins—maximize your profits effortlessly.<br/></p><p><strong>For prestigious hotels with a large room capacity</strong></p><p>We offer custom orders with a personalized design that emphasizes the hotel's unique identity.</p>",
         "button_text": "Request Your Free Samples",
-        "button_url": "#",
+        "button_url": "#wizard-validation-form",
         "button_text2": "",
         "button_url2": "",
         "fullwidth": true,
@@ -432,7 +432,7 @@
           "type": "button",
           "settings": {
             "button_label": "Get a Free Sample Today!",
-            "button_link": "#",
+            "button_link": "#wizard-validation-form",
             "button_style_secondary": false
           }
         }
@@ -534,7 +534,7 @@
         "paratext": "",
         "star_check": true,
         "button_label": "Join Our Network",
-        "button_url": "#",
+        "button_url": "#wizard-validation-form",
         "alignment": "center",
         "padding_top": 100,
         "padding_bottom": 100,
@@ -605,7 +605,7 @@
       "settings": {
         "title": "Trusted by Leading Retailers & Hospitality Brands",
         "btn_label": "Join Our Network",
-        "btn_link": "/"
+        "btn_link": "#wizard-validation-form"
       }
     },
     "faq_info_sec_6HeaPy": {
