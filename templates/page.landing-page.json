@@ -621,22 +621,29 @@
         "text_RXgPXt": {
           "type": "text",
           "settings": {
-            "faq_infoheading": "How do I get exclusive access to new collections?",
-            "faq_info_text": "<p>Join our partner program, and you’ll receive priority product releases before the market.</p>"
+            "faq_infoheading": "Who can become a B2B partner?",
+            "faq_info_text": "<p>We work with hotels, restaurants, beach clubs, yachts, event companies, and homeware retailers seeking premium outdoor solutions.<br/>If you're looking to elevate your table presentation with <strong>Italian-designed, unbreakable tableware</strong>, you are welcome to partner with Amprio Milano.</p>"
           }
         },
         "text_RA38qz": {
           "type": "text",
           "settings": {
-            "faq_infoheading": "What are the minimum order requirements?",
-            "faq_info_text": "<p>Our flexible volume-based discounts start from [insert MOQ details].</p>"
+            "faq_infoheading": "Where are your products shipped from?",
+            "faq_info_text": "<p>All our products are stocked locally in <strong>Dubai, UAE</strong>, ensuring <strong>fast delivery within 24–48 hours across the UAE</strong> and <strong>express shipping across GCC countries</strong>.<br/>This eliminates long international lead times and reduces logistics costs for our partners.</p>"
           }
         },
         "text_mBhh9Y": {
           "type": "text",
           "settings": {
-            "faq_infoheading": "Do you offer custom payment plans?",
-            "faq_info_text": "<p>Yes! We provide tailored payment and shipping terms based on your order volume.</p>"
+            "faq_infoheading": "Do you provide samples for B2B partners?",
+            "faq_info_text": "<p>Yes. We offer <strong>sample sets</strong> upon request, allowing you to evaluate our collections' quality, design, and durability before placing a full order.Please contact our B2B team to arrange a sample shipment.</p>"
+          }
+        },
+        "text_hfKKiP": {
+          "type": "text",
+          "settings": {
+            "faq_infoheading": "Can I order customized sets for my venue?",
+            "faq_info_text": "<p>Yes! Our team can assist you in <strong>curating sets</strong> tailored to your venue’s concept, color palette, and service needs, ensuring a distinctive and cohesive table experience for your guests.</p>"
           }
         }
       },
@@ -644,7 +651,8 @@
         "text_h44EVR",
         "text_RXgPXt",
         "text_RA38qz",
-        "text_mBhh9Y"
+        "text_mBhh9Y",
+        "text_hfKKiP"
       ],
       "settings": {
         "inline_richtext": "Have Questions? We've Got Answers!",
