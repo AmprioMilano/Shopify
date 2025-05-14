@@ -319,7 +319,7 @@
         "sub_text": "Explore the stunning Baci Milano collections—where art meets function.",
         "paratext": "<p>All collections are available for immediate order from our <strong>Dubai warehouse!</strong></p>",
         "button_label": "Shop Online",
-        "button_url": "#",
+        "button_url": "shopify://collections",
         "alignment": "center",
         "padding_top": 100,
         "padding_bottom": 100,
