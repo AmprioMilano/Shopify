@@ -307,6 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               "
+          data-globo-filter-items data-settingscustom='{"card_color_scheme": "{% if settings.card_color_scheme %}{{ settings.card_color_scheme }}{% endif %}", "sold_out_badge_color_scheme": "{% if settings.sold_out_badge_color_scheme %}{{ settings.sold_out_badge_color_scheme }}{% endif %}"}'data-section-id="{% if section.id %}{{section.id}}{% endif %}" data-sectionId="{% if section.id %}{{section.id}}{% endif %}" data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}'
             >
             
             
