@@ -3871,6 +3871,74 @@ button.button.full.continue-shopping {
   }
 }
 
+@media screen and (max-width: 749px) {
+  .custom-mobile-slider {
+    justify-content: flex-start !important;
+    padding-right: 0 !important;
+  }
+  .custom-mobile-slider .slider-item:last-child {
+    margin-right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .custom-mobile-slider .slider-item,
+  .custom-mobile-slider .slider-item .product-media-container,
+  .custom-mobile-slider .slider-item .product__media {
+    width: 100vw !important;
+    height: 100vw !important;
+    min-width: 100vw !important;
+    min-height: 100vw !important;
+    max-width: 100vw !important;
+    max-height: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .custom-mobile-slider .slider-item .product__media img,
+  .custom-mobile-slider .slider-item .product__media picture {
+    width: 100vw !important;
+    height: 100vw !important;
+    min-width: 100vw !important;
+    min-height: 100vw !important;
+    max-width: 100vw !important;
+    max-height: 100vw !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    background: #fff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    position: static !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .product__media-list {
+    justify-content: flex-start !important;
+    padding-right: 0 !important;
+  }
+  .product__media-list .product__media-item:last-child {
+    margin-right: 0 !important;
+  }
+  .slider--mobile,
+  .slider--tablet-up {
+    justify-content: flex-start !important;
+    padding-right: 0 !important;
+  }
+  .slider--mobile .slider__slide:last-child,
+  .slider--tablet-up .slider__slide:last-child {
+    margin-right: 0 !important;
+  }
+}
+
 
 
 
