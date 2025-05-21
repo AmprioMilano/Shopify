@@ -224,3 +224,20 @@ cart-items {
     gap: 1rem;
   }
 }
+
+.cart-drawer__scrollable {
+  max-height: 60vh; /* можно увеличить или уменьшить при необходимости */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.drawer__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.cart-drawer__form {
+  flex: 1 1 auto;
+}
+
