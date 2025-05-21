@@ -3582,3 +3582,11 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+#slidecarthq .slidecarthq .footer,
+#slidecarthq .slidecarthq .slidecarthq__footer {
+  background: #fff !important;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+
