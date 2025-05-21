@@ -3902,15 +3902,15 @@ button.button.full.continue-shopping {
   }
   .custom-mobile-slider .slider-item .product__media img,
   .custom-mobile-slider .slider-item .product__media picture {
-    width: 100vw !important;
-    height: 100vw !important;
-    min-width: 100vw !important;
-    min-height: 100vw !important;
-    max-width: 100vw !important;
-    max-height: 100vw !important;
+    width: 90vw !important;
+    height: 90vw !important;
+    min-width: 90vw !important;
+    min-height: 90vw !important;
+    max-width: 90vw !important;
+    max-height: 90vw !important;
     object-fit: cover !important;
     object-position: center !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
     padding: 0 !important;
     display: block !important;
     background: #fff !important;
