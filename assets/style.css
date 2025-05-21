@@ -3613,9 +3613,8 @@ button.button.full.continue-shopping {
     gap: 0;
   }
   .product__media-item {
-    min-width: 100vw;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     aspect-ratio: 1/1;
     height: auto;
     display: flex;
@@ -3625,8 +3624,8 @@ button.button.full.continue-shopping {
     background: #fff;
   }
   .product__media {
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3634,17 +3633,18 @@ button.button.full.continue-shopping {
   }
   .product__media img,
   .product__media picture {
-    width: 100vw;
-    height: 100vw;
-    max-width: 100vw;
-    max-height: 100vw;
-    min-width: 100vw;
-    min-height: 100vw;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
     position: static;
     display: block;
     background: #fff;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+    min-height: 0;
   }
 }
 
