@@ -3603,3 +3603,26 @@ details-disclosure > details {
   padding-bottom: 32px !important; /* чтобы футер не перекрывал товары */
 }
 
+footer.footer.footer--pattern {
+    background-color: #3B6D58;
+    position: relative;
+    overflow: hidden;
+}
+footer.footer.footer--pattern::before {
+    background: url('//ampriomilano.com/cdn/shop/t/4/assets/footer_pattern.svg?v=39739624138686835111744983955') repeat-x top center;
+    background-size: 100vw auto;
+    opacity: 0.08;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    z-index: 0;
+}
+footer.footer.footer--pattern > * {
+    position: relative;
+    z-index: 1;
+}
+
