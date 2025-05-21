@@ -622,23 +622,34 @@
   line-height: 1;
 }
 
+.drawer,
+.cart-drawer {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .drawer__inner {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-height: 0;
 }
 
 .drawer__scroll-container {
-  overflow-y: auto;
   flex: 1 1 auto;
   min-height: 0;
+  overflow-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   padding-right: 8px;
 }
 
-.cart-drawer__footer {
+.drawer__footer {
   flex-shrink: 0;
   background: white;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
 }
