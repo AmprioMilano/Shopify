@@ -9,8 +9,15 @@
 }
 
 .article-template__hero-container {
-  max-width: 130rem;
+  max-width: 100%;
+  height: 500px;
   margin: 0 auto;
+}
+
+.article-template__hero-container .article-template__hero-adapt {
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
 }
 
 .article-template__hero-small {
@@ -23,6 +30,45 @@
 
 .article-template__hero-large {
   height: 33rem;
+}
+
+.article__breadcrumbs {
+  padding: 40px 100px;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.article__breadcrumbs-separator {
+  color: #8a8a8a;
+  font-family: "TT Norms Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.article__breadcrumbs a {
+  color: #7b7b7b;
+  font-family: "TT Norms Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.article__breadcrumbs-post {
+  color: #000;
+  font-family: "TT Norms Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.article-template .page-width--narrow {
+  max-width: 970px;
+  width: 100%;
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -54,23 +100,252 @@
 }
 
 .article-template header {
-  margin-top: 4.4rem;
-  margin-bottom: 2rem;
-  line-height: calc(0.8 / var(--font-body-scale));
+  padding-top: 40px !important;
+  padding-bottom: 30px !important;
 }
 
-@media screen and (min-width: 750px) {
-  .article-template header {
-    margin-top: 5rem;
-  }
-}
-
-.article-template__title {
+.article-template .article-template__title {
   margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  max-width: 100%;
+  color: #000;
+  font-family: "TT Norms Pro";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
 }
 
-.article-template__title:not(:only-child) {
-  margin-bottom: 1rem;
+.article-template .article-template__content {
+  padding: 0;
+}
+
+.article-template .article-template__content {
+  margin: 0 auto;
+}
+
+.article-template .rte > *:first-child {
+  padding-top: 0;
+}
+
+.article-template .article-template__content p {
+  padding: 14px 0;
+  color: #000;
+  font-family: "TT Norms Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.article-template .caption-with-letter-spacing time {
+  color: #000;
+  font-family: "TT Norms Pro";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+.article-template .article-template__content h3 {
+  color: #000;
+  font-family: "TT Norms Pro" !important;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.article-template .swiper-slide {
+  opacity: 1 !important;
+}
+
+.article-template .article-template__content h3:not(:first-child) {
+  padding-top: 46px;
+}
+
+.article-template__metafield-image {
+  margin: 46px 100px 14px 100px;
+  height: 430px;
+}
+
+.article-template__metafield-content {
+  max-width: 970px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 46px;
+  padding-bottom: 30px;
+}
+
+.article-slider__controls {
+  max-width: 322px;
+  width: 100%;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-slider__btn {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.article-slider__btn:hover {
+  opacity: 0.9;
+}
+
+.article-slider__btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.article-slider__btn svg circle {
+  fill: rgb(42, 126, 108);
+  transition: all 0.3s ease;
+}
+
+.article-template__metafield-products {
+  padding: 30px 40px 14px 40px;
+}
+
+.article-slider__btn svg g {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.article-slider__btn.swiper-button-disabled svg g {
+  opacity: 0.6;
+}
+
+.article-slider__btn.swiper-button-disabled {
+  cursor: no-drop;
+}
+
+.article-slider__btn.swiper-button-disabled svg circle {
+  fill: rgb(138, 138, 138);
+}
+
+.article-template .article-template__back {
+  margin: 20px auto 103px auto;
+  max-width: 970px;
+  width: 100%;
+}
+
+.article-template .article-template__back:last-child {
+  margin-bottom: 103px;
+}
+
+.article-template .article-template__back .article-template__link {
+  justify-content: flex-start;
+}
+
+.article-template .article-template__back .article-template__link .icon-wrap {
+  transform: rotate(0deg);
+  margin-right: 10px;
+  width: 8px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-template__metafield-content h3 {
+  color: #000;
+  font-family: "TT Norms Pro" !important;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+  padding-bottom: 15px;
+}
+
+.article__metafield-product {
+  display: flex;
+  flex-direction: column;
+}
+
+.article__metafield-product__image {
+  height: 259px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  margin-bottom: 27px;
+}
+
+.article__metafield-product__title {
+  letter-spacing: 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: #111;
+}
+
+.article__slide-product-details {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+.article__metafield-product__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-template__metafield-content p {
+  padding: 15px 0;
+  color: #000;
+  font-family: "TT Norms Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.article-template__metafield-content ul {
+  color: #000;
+  font-family: "TT Norms Pro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.article-template__metafield-content h3:not(:first-child) {
+  padding-top: 46px;
+}
+
+.article-template__metafield-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-template ul {
+  list-style-position: unset;
+  list-style: unset;
+  padding-left: 29px;
 }
 
 .article-template__link {
@@ -172,4 +447,90 @@
 
 .article-template__back:last-child {
   margin-bottom: 3.2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .article__breadcrumbs {
+    padding: 20px;
+    gap: 10px;
+  }
+  .article__breadcrumbs a {
+    font-size: 14px;
+  }
+  .article__breadcrumbs-post {
+    font-size: 14px;
+  }
+  .article-template > *:first-child:not(.article-template__hero-container) {
+    margin-top: 0px;
+  }
+  .article-template__hero-container {
+    height: 400px;
+  }
+  .article-template .article-template__title {
+    font-size: 25px;
+    line-height: 100%;
+  }
+  .article-template .page-width--narrow {
+    padding: 0 20px !important;
+  }
+  .article-template header.page-width--narrow {
+    padding-top: 20px !important;
+    padding-bottom: 15px !important;
+  }
+  .article-template .caption-with-letter-spacing time {
+    font-size: 14px;
+  }
+  .article-template .article-template__content p {
+    font-size: 16px;
+  }
+  .article-template .article-template__content h3:not(:first-child) {
+    padding-top: 26px;
+  }
+  .article-template .article-template__content h3 {
+    font-size: 22px;
+    line-height: 110%;
+  }
+  .article-template__metafield-image {
+    margin: 26px 20px 4px 20px;
+  }
+  .article-template__metafield-content {
+    padding-top: 26px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .article-template__metafield-content h3 {
+    font-size: 22px;
+    line-height: 110%;
+  }
+  .article-template__metafield-content p {
+    font-size: 16px;
+  }
+  .article-template__metafield-content ul {
+    font-size: 16px;
+    padding-left: 25px;
+  }
+  .article-template__metafield-products {
+    padding: 10px 20px 4px 20px;
+  }
+  .article-template .article-template__back {
+    padding: 0 20px;
+  }
+  .article-template .article-template__back:last-child {
+    margin-bottom: 60px;
+  }
+  .article__metafield-product__image {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .article-slider__controls {
+    margin: 20px auto 0;
+    justify-content: center;
+    gap: 50px;
+  }
+  .article-slider__btn {
+    width: 35px;
+    height: 35px;
+  }
 }
