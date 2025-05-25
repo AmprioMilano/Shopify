@@ -1,6 +1,14 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
 <article class="article-template">
+  <nav class="article__breadcrumbs">
+    <a href="{{ routes.root_url }}">Home</a>
+    <span class="article__breadcrumbs-separator">•</span>
+    <a href="{{ blog.url }}">Blog</a>
+    <span class="article__breadcrumbs-separator">•</span>
+    <span class="article__breadcrumbs-post">{{ article.title }}</span>
+  </nav>
+
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -64,12 +72,14 @@
         </header>
 
       {%- when 'content' -%}
-        <div
-          class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {{ block.shopify_attributes }}
-        >
-          {{ article.content }}
-        </div>
+        {% if article.content != blank %}
+          <div
+            class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {{ article.content }}
+          </div>
+        {% endif %}
 
       {%- when 'share' -%}
         <div
@@ -82,11 +92,77 @@
     {%- endcase -%}
   {%- endfor -%}
 
+  {% if article.metafields.custom.image != blank %}
+    <div class="article-template__metafield-image">
+      {{ article.metafields.custom.image | image_url: width: 2000 | image_tag }}
+    </div>
+  {% endif %}
+
+  {% if article.metafields.custom.content != blank %}
+    <div class="article-template__metafield-content">
+      {{ article.metafields.custom.content | metafield_tag }}
+    </div>
+  {% endif %}
+
+  {% if article.metafields.custom.list_of_products != blank %}
+    <div class="article-template__metafield-products">
+      <div class="swiper articleSlider">
+        <div class="swiper-wrapper">
+          {% for product in article.metafields.custom.list_of_products.value %}
+            <div class="swiper-slide">
+              <a href="{{ product.url }}" class="article__metafield-product">
+                <div class="article__metafield-product__image">
+                  {{ product.featured_image | image_url: width: 300 | image_tag }}
+                </div>
+                <div class="article__metafield-product__title">
+                  {{ product.title }}
+                </div>
+                <div class="article__slide-product-details">
+                  {{ product.metafields.product_settings.material }} — {{ product.metafields.product_settings.size }}
+                  <br>
+                  {{ product.metafields.product_settings.brand }}
+                  <div class="article__slide-price">{{ product.price | money_with_currency }}</div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="article-slider__controls">
+          <button class="article-slider__btn article-slider__btn-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+              <g opacity="0.6">
+                <circle cx="20" cy="20" r="20" transform="matrix(-1 0 0 1 40.2256 0)" fill="#8A8A8A"/>
+                <path d="M20.2256 13.125L13.3506 20L20.2256 26.875" stroke="white" stroke-width="1.48589"/>
+                <path d="M13.3506 20H26.4756" stroke="white" stroke-width="1.48589"/>
+              </g>
+            </svg>
+          </button>
+          <button class="article-slider__btn article-slider__btn-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+              <circle cx="20.7744" cy="20" r="20" fill="#2A7E6C"/>
+              <path d="M20.7744 13.125L27.6494 20L20.7744 26.875" stroke="white" stroke-width="1.48589"/>
+              <path d="M27.6494 20H14.5244" stroke="white" stroke-width="1.48589"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if article.metafields.custom.content2 != blank %}
+    <div class="article-template__metafield-content">
+      {{ article.metafields.custom.content2 | metafield_tag }}
+    </div>
+  {% endif %}
+
   <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
       <span class="icon-wrap">
         <span class="svg-wrapper">
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
+          {% comment %} {{- 'icon-arrow.svg' | inline_asset_content -}} {% endcomment %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
+            <path d="M9 1L1 9L9 17" stroke="black"/>
+          </svg>
         </span>
       </span>
       {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
@@ -290,6 +366,29 @@
 
 <script type="application/ld+json">
   {{ article | structured_data }}
+</script>
+
+<script>
+  var articleSlider = new Swiper('.articleSlider', {
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      749: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      1149: {
+        slidesPerView: 5,
+        spaceBetween: 15,
+      },
+    },
+    navigation: {
+      nextEl: '.article-slider__btn-next',
+      prevEl: '.article-slider__btn-prev',
+    },
+  });
 </script>
 
 {% schema %}
