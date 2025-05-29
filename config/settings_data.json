@@ -143,6 +143,15 @@
       "slider": {
         "type": "slider",
         "blocks": {
+          "slide_QqrkqT": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/DSC04959-2.jpg",
+              "slide_title": "",
+              "slide_link": "",
+              "paragraph": ""
+            }
+          },
           "slide_RVPQRm": {
             "type": "slide",
             "settings": {
@@ -196,6 +205,7 @@
           }
         },
         "block_order": [
+          "slide_QqrkqT",
           "slide_RVPQRm",
           "slide_zcdCDM",
           "slide_CnwVJA",
