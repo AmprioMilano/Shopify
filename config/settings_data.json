@@ -218,14 +218,6 @@
       "featured-collections": {
         "type": "featured-collections",
         "blocks": {
-          "text_HEQC9m": {
-            "type": "text",
-            "settings": {
-              "col_image": "shopify://shop_images/BAROQUE_ROCK_ANNIVER.jpg",
-              "col_title": "Baroque & Rock",
-              "col_link": "shopify://collections/baroque-rock"
-            }
-          },
           "text_YNqqRy": {
             "type": "text",
             "settings": {
@@ -233,11 +225,19 @@
               "col_title": "Mamma Mia",
               "col_link": "shopify://collections/mamma-mia"
             }
+          },
+          "text_HEQC9m": {
+            "type": "text",
+            "settings": {
+              "col_image": "shopify://shop_images/BAROQUE_ROCK_ANNIVER.jpg",
+              "col_title": "Baroque & Rock",
+              "col_link": "shopify://collections/baroque-rock"
+            }
           }
         },
         "block_order": [
-          "text_HEQC9m",
-          "text_YNqqRy"
+          "text_YNqqRy",
+          "text_HEQC9m"
         ],
         "settings": {
           "title": "Trending now!"
