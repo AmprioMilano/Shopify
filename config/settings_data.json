@@ -153,6 +153,16 @@
               "paragraph": "<p>Charm and boundless beauty</p>"
             }
           },
+          "slide_CnwVJA": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/FIRENZE_piatti.jpg",
+              "image_mob": "shopify://shop_images/FIRENZE_piatti.jpg",
+              "slide_title": "Firenze Collection",
+              "slide_link": "shopify://collections/firenze",
+              "paragraph": "<p>Irresistibly hip and yet timeless.</p>"
+            }
+          },
           "slide_FGU8BM": {
             "type": "slide",
             "settings": {
@@ -183,16 +193,6 @@
               "paragraph": "<p>A masterpiece of creativity, showcasing unique shapes and designs</p>"
             }
           },
-          "slide_CnwVJA": {
-            "type": "slide",
-            "settings": {
-              "image": "shopify://shop_images/FIRENZE_tavola.jpg",
-              "image_mob": "shopify://shop_images/FIRENZE_piatti.jpg",
-              "slide_title": "Firenze Collection",
-              "slide_link": "shopify://collections/firenze",
-              "paragraph": "<p>Irresistibly hip and yet timeless.</p>"
-            }
-          },
           "slide_tkpEFw": {
             "type": "slide",
             "settings": {
@@ -217,10 +217,10 @@
         },
         "block_order": [
           "slide_QqrkqT",
+          "slide_CnwVJA",
           "slide_FGU8BM",
           "slide_RVPQRm",
           "slide_zcdCDM",
-          "slide_CnwVJA",
           "slide_tkpEFw",
           "slide_AV89bV"
         ],
