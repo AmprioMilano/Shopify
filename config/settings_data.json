@@ -153,6 +153,16 @@
               "paragraph": "<p>Charm and boundless beauty</p>"
             }
           },
+          "slide_FGU8BM": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/DSC04833_f9c64231-4725-4160-a133-7ef5ff1c97af.jpg",
+              "image_mob": "shopify://shop_images/DSC04833_f9c64231-4725-4160-a133-7ef5ff1c97af.jpg",
+              "slide_title": "",
+              "slide_link": "shopify://collections/chic-zen",
+              "paragraph": ""
+            }
+          },
           "slide_RVPQRm": {
             "type": "slide",
             "settings": {
@@ -207,6 +217,7 @@
         },
         "block_order": [
           "slide_QqrkqT",
+          "slide_FGU8BM",
           "slide_RVPQRm",
           "slide_zcdCDM",
           "slide_CnwVJA",
