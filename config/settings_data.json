@@ -143,6 +143,16 @@
       "slider": {
         "type": "slider",
         "blocks": {
+          "slide_BE38kB": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/EEEE3084.jpg",
+              "image_mob": "shopify://shop_images/EEEE3084.jpg",
+              "slide_title": "Tableware for Yachts",
+              "slide_link": "shopify://collections/yachts",
+              "paragraph": ""
+            }
+          },
           "slide_QqrkqT": {
             "type": "slide",
             "settings": {
@@ -216,6 +226,7 @@
           }
         },
         "block_order": [
+          "slide_BE38kB",
           "slide_QqrkqT",
           "slide_CnwVJA",
           "slide_FGU8BM",
