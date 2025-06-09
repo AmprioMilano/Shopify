@@ -46,10 +46,7 @@
 -%}
 
 {%- capture sizes -%}
-  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | divided_by: desktop_columns | round }}px,
-  (min-width: 990px) calc({{ media_width | times: 100 | divided_by: desktop_columns }}vw - 10rem),
-  (min-width: 750px) calc((100vw - 11.5rem) / 2),
-  calc(100vw / {{ mobile_columns }} - 4rem)
+  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | divided_by: desktop_columns | round }}px, (min-width: 990px) calc({{ media_width | times: 100 | divided_by: desktop_columns }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / {{ mobile_columns }} - 4rem)
 {%- endcapture -%}
 
 <div
@@ -60,23 +57,37 @@
     class="product__modal-opener product__modal-opener--{{ media.media_type }}"
     data-modal="#ProductModal-{{ modal_id }}"
   >
-    {%- render 'loading-spinner' -%}
-    <div class="product__media media media--square"
-         style="aspect-ratio: 1 / 1; display: flex; justify-content: center; align-items: center; background-color: #fff;"
+    <span
+      class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}"
+      aria-hidden="true"
     >
-      {%
-        assign img_src = media.preview_image.src
-      -%}
-      {{ img_src
-        | img_url: '1946x'
+      {% case media.media_type %}
+        {% when 'video', 'external_video' %}
+          <span class="svg-wrapper">
+            {{- 'icon-play.svg' | inline_asset_content -}}
+          </span>
+        {% when 'model' %}
+          <span class="svg-wrapper">
+            {{- 'icon-3d-model.svg' | inline_asset_content -}}
+          </span>
+        {% else %}
+          <span class="svg-wrapper">
+            {{- 'icon-zoom.svg' | inline_asset_content -}}
+          </span>
+      {% endcase %}
+    </span>
+    {%- render 'loading-spinner' -%}
+    <div class="product__media media media--transparent">
+      {{
+        media.preview_image
+        | image_url: width: 1946
         | image_tag:
-          class: 'media-square-img',
+          class: image_class,
           loading: lazy,
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
       }}
     </div>
-
     <button
       class="product__media-toggle quick-add-hidden product__media-zoom-{{ section.settings.image_zoom }}"
       type="button"
