@@ -48,7 +48,7 @@
 
 .home-slider .slider-content {
   position: absolute;
-  bottom: 140px;
+  bottom: 180px;
   left: 0;
   right: 0;
   color: #fff;
@@ -80,12 +80,13 @@
   font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
 }
 
 .home-slider .title {
   font-size: 48px;
-  margin: 0 0 2rem;
+  margin: 0 0 2.5rem;
   max-width: 500px;
   font-family: "Playfair Display", serif;
   line-height: 1.2;
@@ -94,8 +95,8 @@
 .home-slider .button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
+  gap: 12px;
+  padding: 14px 28px;
   background: #fff;
   color: #000;
   text-decoration: none;
@@ -103,6 +104,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .home-slider .button:hover {
@@ -132,7 +134,7 @@
 
 .swiper-pagination-bullet {
   width: 35px;
-  height: 2px;
+  height: 18px;
   background: rgba(255, 255, 255, 0.5);
   opacity: 1;
   transition: all 0.3s ease;
@@ -166,23 +168,67 @@
   }
   
   .home-slider .slider-content {
-    bottom: 100px;
+    bottom: 140px;
     padding: 0 1.5rem;
+  }
+  
+  .home-slider .subtitle {
+    font-size: 12px;
+    margin-bottom: 1rem;
   }
   
   .home-slider .title {
     font-size: 32px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     max-width: 100%;
+    line-height: 1.15;
+  }
+  
+  .home-slider .button {
+    padding: 12px 24px;
+    font-size: 12px;
+    gap: 8px;
+  }
+  
+  .home-slider .button svg {
+    width: 14px;
+    height: 14px;
   }
 
   .swiper-pagination {
-    bottom: 20px !important;
+    bottom: 25px !important;
     gap: 12px;
   }
 
   .swiper-pagination-bullet {
     width: 30px;
+    height: 18px;
+  }
+
+  .swiper-pagination-bullet::after {
+    top: -15px;
+    left: -12px;
+    right: -12px;
+    bottom: -15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-slider .swiper-slide {
+    height: 500px;
+  }
+  
+  .home-slider .slider-content {
+    bottom: 120px;
+  }
+  
+  .home-slider .title {
+    font-size: 28px;
+    margin-bottom: 1.75rem;
+  }
+  
+  .swiper-pagination {
+    bottom: 20px !important;
   }
 }
 
