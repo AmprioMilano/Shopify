@@ -30,11 +30,30 @@
 </div>
 
 <style>
+.shopify-section-slider {
+  position: relative;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
 .home-slider {
   width: 100%;
   position: relative;
   z-index: 1;
   margin-bottom: 0;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+#shopify-section-template--15771808956534__product-grid {
+  position: relative;
+  z-index: 2;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .home-slider .swiper-slide {
@@ -260,6 +279,13 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Force layout recalculation
+  document.body.style.opacity = '0.99';
+  setTimeout(function() {
+    document.body.style.opacity = '1';
+  }, 0);
+
+  // Initialize Swiper
   new Swiper('.homeSwiper', {
     effect: 'fade',
     fadeEffect: {
@@ -271,13 +297,16 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '"></span>';
-      }
+      clickable: true
     },
     loop: true,
-    speed: 1000
+    speed: 1000,
+    on: {
+      init: function() {
+        // Force layout update after Swiper initialization
+        window.dispatchEvent(new Event('resize'));
+      }
+    }
   });
 });
 </script>
