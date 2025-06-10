@@ -29,10 +29,10 @@
               {% endif %}
             </a>
             <div class="container slider-content">
-              <a href="{{ block.settings.slide_link }}" class="slide-title">{{ block.settings.slide_title }}</a>
-              <div class="slide-description">{{ block.settings.paragraph }}</div>
+              <span class="slide-subtitle">{{ block.settings.subtitle }}</span>
+              <h2 class="slide-title">{{ block.settings.slide_title }}</h2>
               <a href="{{ block.settings.slide_link }}" class="cta-button">
-                <span>{{ block.settings.cta_text | default: 'Explore Collection' }}</span>
+                {{ block.settings.cta_text | default: 'DISCOVER MORE' }}
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -123,9 +123,15 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
           "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "HANDMADE EXCELLENCE"
+        },
+        {
+          "type": "text",
           "id": "slide_title",
-          "label": "Slide Title",
-          "default": "Welcome to our store"
+          "label": "Title",
+          "default": "Artisan Home Decor"
         },
         {
           "type": "url",
@@ -133,15 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
           "label": "Slide Link"
         },
         {
-          "type": "richtext",
-          "id": "paragraph",
-          "label": "Description"
-        },
-        {
           "type": "text",
           "id": "cta_text",
           "label": "Button Text",
-          "default": "Explore Collection"
+          "default": "DISCOVER MORE"
         }
       ]
     }
