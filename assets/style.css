@@ -140,8 +140,13 @@ a.logo {
     font-weight: 400;
 }
 header {
-    padding: 25px 0;
+    padding: 25px 0 0!important;
     font-weight: 300;
+    margin-bottom: 0;
+    height: auto;
+    min-height: 100px;
+    position: relative;
+    z-index: 10;
 }
 .header--center ul {
     gap: 20px;
@@ -1251,6 +1256,8 @@ li.collection-list__item.grid__item.scroll-trigger.animate--slide-in img {
     width: 100%;
     z-index: 111;
     background-color: #fefefe;
+    height: auto;
+    min-height: 80px;
 }
 .header--center.d-fx.jc-c li a,
 .tdu-on-hover {
