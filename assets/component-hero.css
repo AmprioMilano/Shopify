@@ -1,0 +1,140 @@
+.home-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-slider .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.home-slider .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.home-slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-slider .slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.home-slider .slider-content {
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 2;
+  padding: 0 2rem;
+}
+
+.home-slider .slider-content::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  z-index: -1;
+}
+
+.home-slider .slider-content .slide-title {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.home-slider .slider-content .slide-description {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0 0 2rem 0;
+}
+
+.home-slider .slider-content .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #fff;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.home-slider .slider-content .cta-button:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.home-slider .slider-content .cta-button svg {
+  transition: transform 0.3s ease;
+}
+
+.home-slider .slider-content .cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .desk-image {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mob-image {
+    display: none;
+  }
+  
+  .home-slider .slider-content {
+    padding: 0 4rem;
+  }
+  
+  .home-slider .slider-content .slide-title {
+    font-size: 3rem;
+  }
+  
+  .home-slider .slider-content .slide-description {
+    font-size: 1.5rem;
+    margin: 0 0 2.5rem 0;
+  }
+  
+  .home-slider .slider-content .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+} 
