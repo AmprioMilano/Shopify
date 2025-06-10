@@ -37,7 +37,7 @@
 
 .home-slider .swiper-slide {
   position: relative;
-  height: 600px;
+  height: 650px;
 }
 
 .home-slider .swiper-slide img {
@@ -48,7 +48,7 @@
 
 .home-slider .slider-content {
   position: absolute;
-  bottom: 120px;
+  bottom: 140px;
   left: 0;
   right: 0;
   color: #fff;
@@ -61,14 +61,15 @@
 .home-slider .slider-content::before {
   content: '';
   position: absolute;
-  top: -300px;
+  top: -400px;
   left: -200vw;
   right: -200vw;
   bottom: -200px;
-  background: linear-gradient(90deg, 
-    rgba(0,0,0,0.6) 0%,
-    rgba(0,0,0,0.4) 35%,
-    rgba(0,0,0,0.2) 65%,
+  background: linear-gradient(0deg, 
+    rgba(0,0,0,0.7) 0%,
+    rgba(0,0,0,0.5) 25%,
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0.1) 75%,
     rgba(0,0,0,0) 100%
   );
   z-index: -1;
@@ -122,14 +123,15 @@
 .swiper-pagination {
   bottom: 30px !important;
   display: flex;
-  gap: 12px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  padding: 20px 0;
+  width: 100%;
 }
 
 .swiper-pagination-bullet {
-  width: 24px;
+  width: 35px;
   height: 2px;
   background: rgba(255, 255, 255, 0.5);
   opacity: 1;
@@ -143,15 +145,15 @@
 .swiper-pagination-bullet::after {
   content: '';
   position: absolute;
-  top: -15px;
-  left: -10px;
-  right: -10px;
-  bottom: -15px;
+  top: -20px;
+  left: -15px;
+  right: -15px;
+  bottom: -20px;
 }
 
 .swiper-pagination-bullet-active {
   background: #fff;
-  transform: scaleX(1.5);
+  transform: scaleX(1.2);
 }
 
 @media screen and (max-width: 767px) {
@@ -160,7 +162,7 @@
   }
   
   .home-slider .swiper-slide {
-    height: 500px;
+    height: 550px;
   }
   
   .home-slider .slider-content {
@@ -176,11 +178,11 @@
 
   .swiper-pagination {
     bottom: 20px !important;
-    gap: 10px;
+    gap: 12px;
   }
 
   .swiper-pagination-bullet {
-    width: 20px;
+    width: 30px;
   }
 }
 
@@ -204,7 +206,10 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '"></span>';
+      }
     },
     loop: true,
     speed: 1000
