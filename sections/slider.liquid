@@ -3,29 +3,34 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  background: #fff;
 }
 
 .home-slider .swiper {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 .home-slider .swiper-slide {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .home-slider .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .home-slider .slide-link {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 .home-slider .slider-content {
@@ -39,43 +44,46 @@
   text-align: left;
   max-width: 90%;
   margin: 0 auto;
+  pointer-events: none;
 }
 
 .home-slider .slider-content::before {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  left: -100vw;
+  right: -100vw;
+  height: 100vh;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.1) 50%, transparent);
   z-index: -1;
 }
 
 .home-slider .slider-content .slide-subtitle {
   display: block;
   font-size: 0.875rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: 400;
   color: #fff;
+  font-family: "TT Norms Pro Trial", sans-serif;
 }
 
 .home-slider .slider-content .slide-title {
   color: #fff;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 500;
   margin: 0 0 2rem;
-  line-height: 1.2;
+  line-height: 1.1;
   font-family: "Playfair Display", serif;
+  max-width: 800px;
 }
 
 .home-slider .slider-content .cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -85,6 +93,8 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  pointer-events: auto;
+  font-family: "TT Norms Pro Trial", sans-serif;
 }
 
 .home-slider .slider-content .cta-button:hover {
@@ -93,33 +103,37 @@
 }
 
 .home-slider .slider-content .cta-button svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.3s ease;
 }
 
 .home-slider .slider-content .cta-button:hover svg {
-  transform: translateX(4px);
+  transform: translateX(6px);
 }
 
 .swiper-pagination {
   position: absolute;
-  bottom: 20px;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background: rgba(255, 255, 255, 0.5);
   opacity: 1;
-  margin: 0 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
   background: #fff;
+  transform: scale(1.5);
 }
 
 @media screen and (max-width: 767px) {
@@ -128,11 +142,21 @@
   }
   
   .home-slider .slider-content {
-    bottom: 10%;
+    bottom: 20%;
+    padding: 0 1.5rem;
   }
   
   .home-slider .slider-content .slide-title {
     font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-slider .slider-content .slide-subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .home-slider .slider-content .cta-button {
+    padding: 0.75rem 1.5rem;
   }
 }
 
@@ -143,7 +167,7 @@
   
   .home-slider .slider-content {
     padding: 0 4rem;
-    max-width: 1200px;
+    max-width: 1400px;
   }
 }
 </style>
@@ -154,28 +178,27 @@
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
           <div class="swiper-slide" {{ block.shopify_attributes }}>
-            <a href="{{ block.settings.slide_link }}" class="slide-link">
-              {% if block.settings.video %}
-                {{ block.settings.video | video_tag: playsinline: true, autoplay: true, loop: true, muted: true, controls: false }}
-              {% else %}
-                <img 
-                  class="desk-image" 
-                  src="{{ block.settings.image | img_url: '2000x' }}" 
-                  alt="{{ block.settings.slide_title | escape }}" 
-                  width="" 
-                  height="" 
-                  loading="lazy"
-                >
-                <img 
-                  class="mob-image" 
-                  src="{{ block.settings.image_mob | img_url: '800x' }}" 
-                  alt="{{ block.settings.slide_title | escape }}" 
-                  width="" 
-                  height="" 
-                  loading="lazy"
-                >
-              {% endif %}
-            </a>
+            {% if block.settings.video %}
+              {{ block.settings.video | video_tag: playsinline: true, autoplay: true, loop: true, muted: true, controls: false }}
+            {% else %}
+              <img 
+                class="desk-image" 
+                src="{{ block.settings.image | img_url: '2000x' }}" 
+                alt="{{ block.settings.slide_title | escape }}" 
+                width="" 
+                height="" 
+                loading="lazy"
+              >
+              <img 
+                class="mob-image" 
+                src="{{ block.settings.image_mob | img_url: '800x' }}" 
+                alt="{{ block.settings.slide_title | escape }}" 
+                width="" 
+                height="" 
+                loading="lazy"
+              >
+            {% endif %}
+            <a href="{{ block.settings.slide_link }}" class="slide-link"></a>
             <div class="container slider-content">
               <span class="slide-subtitle">{{ block.settings.subtitle }}</span>
               <h2 class="slide-title">{{ block.settings.slide_title }}</h2>
