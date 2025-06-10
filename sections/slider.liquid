@@ -1,80 +1,161 @@
-<div class="home-slider">
+{{ 'component-hero.css' | asset_url | stylesheet_tag }}
+
+<section id="shopify-section-slider" class="shopify-section slider">
+  <div class="home-slider">
     <div class="swiper homeSwiper">
-        <div class="swiper-wrapper">
-          {% for block in section.blocks %}
-            <div class="swiper-slide">
-                <a href="{{ block.settings.slide_link }}" class="slide-link">
-                  {% if block.settings.video %}
-                    {{ block.settings.video | video_tag: playsinline: true, autoplay: true, loop: true, muted: true, controls: false }}
-                  {% else %}
-                    <img class="desk-image" src="{{ block.settings.image | img_url : '2000x'  }}" alt="" width="" height="" loading="lazy" >
-                    <img class="mob-image" src="{{ block.settings.image_mob | img_url : '800x'  }}" alt="" width="" height="" loading="lazy" >
-                  {% endif %}
-                </a>
-                <div class="container slider-content">
-                    <a href="{{ block.settings.slide_link }}">{{ block.settings.slide_title }}</a>
-                    {{ block.settings.paragraph }} 
-                </div>
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.slide_link }}" class="slide-link">
+              {% if block.settings.video %}
+                {{ block.settings.video | video_tag: playsinline: true, autoplay: true, loop: true, muted: true, controls: false }}
+              {% else %}
+                <img 
+                  class="desk-image" 
+                  src="{{ block.settings.image | img_url: '2000x' }}" 
+                  alt="{{ block.settings.slide_title | escape }}" 
+                  width="" 
+                  height="" 
+                  loading="lazy"
+                >
+                <img 
+                  class="mob-image" 
+                  src="{{ block.settings.image_mob | img_url: '800x' }}" 
+                  alt="{{ block.settings.slide_title | escape }}" 
+                  width="" 
+                  height="" 
+                  loading="lazy"
+                >
+              {% endif %}
+            </a>
+            <div class="container slider-content">
+              <span class="slide-subtitle">{{ block.settings.subtitle }}</span>
+              <h2 class="slide-title">{{ block.settings.slide_title }}</h2>
+              <a href="{{ block.settings.slide_link }}" class="cta-button">
+                {{ block.settings.cta_text | default: 'DISCOVER MORE' }}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
             </div>
-          {% endfor %}
-        </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-</div>
-  <style>
-    
-    @media screen and (min-width: 768px){
-      img.mob-image {
-        display: none;
-      }  
-    }
-    @media screen and (max-width: 767px){
-      img.desk-image {
-        display: none;
-      }
-    }
-    </style>
-{% schema %} 
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  new Swiper('.homeSwiper', {
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    loop: true,
+    speed: 1000
+  });
+});
+</script>
+
+{% schema %}
 {
-  "name":"Slider",
-  "tag":"section",
-  "class":"slider",
-  "blocks":[
-     {
-        "name":"Slide",
-        "type":"slide",
-        "settings":[
-          {
-            "type":"image_picker",
-            "id":"image",
-            "label":"Image"
-          },
-          {
-            "type":"image_picker",
-            "id":"image_mob",
-            "label":"Mobile Image"
-          },
-          {
-            "type":"video",
-            "id":"video",
-            "label":"Video"
-          },
-          {
-            "type":"text",
-            "id":"slide_title",
-            "label":"Slide Title"
-          },
-          {
-            "type":"url",
-            "id":"slide_link",
-            "label":"Slide Link"
-          },
-          {
-            "type": "richtext",
-            "id": "paragraph",
-            "label": "Paragraph"
-          }
-        ]
-     },
+  "name": "Hero Slider",
+  "tag": "section",
+  "class": "slider",
+  "settings": [
+    {
+      "type": "select",
+      "id": "slide_height",
+      "label": "Slide height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to first image"
+        },
+        {
+          "value": "full",
+          "label": "Full screen height"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 9,
+      "step": 1,
+      "unit": "s",
+      "label": "Change slides every",
+      "default": 6
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "HANDMADE EXCELLENCE"
+        },
+        {
+          "type": "text",
+          "id": "slide_title",
+          "label": "Title",
+          "default": "Artisan Home Decor"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Slide Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text",
+          "default": "DISCOVER MORE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
   ]
 }
 {% endschema %}
