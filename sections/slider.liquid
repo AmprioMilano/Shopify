@@ -1,80 +1,242 @@
 <div class="home-slider">
-    <div class="swiper homeSwiper">
-        <div class="swiper-wrapper">
-          {% for block in section.blocks %}
-            <div class="swiper-slide">
-                <a href="{{ block.settings.slide_link }}" class="slide-link">
-                  {% if block.settings.video %}
-                    {{ block.settings.video | video_tag: playsinline: true, autoplay: true, loop: true, muted: true, controls: false }}
-                  {% else %}
-                    <img class="desk-image" src="{{ block.settings.image | img_url : '2000x'  }}" alt="" width="" height="" loading="lazy" >
-                    <img class="mob-image" src="{{ block.settings.image_mob | img_url : '800x'  }}" alt="" width="" height="" loading="lazy" >
-                  {% endif %}
-                </a>
-                <div class="container slider-content">
-                    <a href="{{ block.settings.slide_link }}">{{ block.settings.slide_title }}</a>
-                    {{ block.settings.paragraph }} 
-                </div>
-            </div>
-          {% endfor %}
+  <div class="swiper homeSwiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <a href="{{ block.settings.collection.url }}" class="slide-link">
+            {% if block.settings.video %}
+              {{ block.settings.video | video_tag: playsinline: true, autoplay: true, loop: true, muted: true, controls: false }}
+            {% else %}
+              <img class="desk-image" src="{{ block.settings.image | img_url: '2000x' }}" alt="" width="" height="" loading="lazy">
+              <img class="mob-image" src="{{ block.settings.image_mob | img_url: '800x' }}" alt="" width="" height="" loading="lazy">
+            {% endif %}
+          </a>
+          <div class="container slider-content">
+            <span class="subtitle">{{ block.settings.subtitle }}</span>
+            <h2 class="title">{{ block.settings.slide_title }}</h2>
+            <a href="{{ block.settings.collection.url }}" class="button">
+              {{ block.settings.cta_text | default: 'DISCOVER MORE' }}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
         </div>
+      {% endfor %}
     </div>
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
-  <style>
-    
-    @media screen and (min-width: 768px){
-      img.mob-image {
-        display: none;
-      }  
-    }
-    @media screen and (max-width: 767px){
-      img.desk-image {
-        display: none;
-      }
-    }
-    </style>
-{% schema %} 
+
+<style>
+.home-slider {
+  width: 100%;
+  position: relative;
+}
+
+.home-slider .swiper-slide {
+  position: relative;
+  height: 600px;
+}
+
+.home-slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-slider .slider-content {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.home-slider .slider-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  height: 300px;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  z-index: -1;
+}
+
+.home-slider .subtitle {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.home-slider .title {
+  font-size: 48px;
+  margin: 0 0 2rem;
+  max-width: 600px;
+  font-family: "Playfair Display", serif;
+}
+
+.home-slider .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.home-slider .button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.home-slider .button svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.home-slider .button:hover svg {
+  transform: translateX(4px);
+}
+
+.swiper-pagination {
+  bottom: 30px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .desk-image {
+    display: none;
+  }
+  
+  .home-slider .swiper-slide {
+    height: 500px;
+  }
+  
+  .home-slider .slider-content {
+    bottom: 80px;
+    padding: 0 1.5rem;
+  }
+  
+  .home-slider .title {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mob-image {
+    display: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  new Swiper('.homeSwiper', {
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    loop: true,
+    speed: 1000
+  });
+});
+</script>
+
+{% schema %}
 {
-  "name":"Slider",
-  "tag":"section",
-  "class":"slider",
-  "blocks":[
-     {
-        "name":"Slide",
-        "type":"slide",
-        "settings":[
-          {
-            "type":"image_picker",
-            "id":"image",
-            "label":"Image"
-          },
-          {
-            "type":"image_picker",
-            "id":"image_mob",
-            "label":"Mobile Image"
-          },
-          {
-            "type":"video",
-            "id":"video",
-            "label":"Video"
-          },
-          {
-            "type":"text",
-            "id":"slide_title",
-            "label":"Slide Title"
-          },
-          {
-            "type":"url",
-            "id":"slide_link",
-            "label":"Slide Link"
-          },
-          {
-            "type": "richtext",
-            "id": "paragraph",
-            "label": "Paragraph"
-          }
-        ]
-     },
+  "name": "Hero Slider",
+  "tag": "section",
+  "class": "slider",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "HANDMADE EXCELLENCE"
+        },
+        {
+          "type": "text",
+          "id": "slide_title",
+          "label": "Title",
+          "default": "Artisan Home Decor"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text",
+          "default": "DISCOVER MORE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
   ]
 }
 {% endschema %}
