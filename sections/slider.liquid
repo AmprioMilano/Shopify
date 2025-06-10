@@ -31,25 +31,22 @@
 
 <style>
 .shopify-section-slider {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  right: 0;
+  position: relative;
   width: 100%;
   z-index: 1;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  will-change: transform;
+  padding-top: 100px;
+  background: #fff;
 }
 
 .home-slider {
   width: 100%;
   position: relative;
   z-index: 1;
-  margin-bottom: 0;
+  margin: 0;
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   will-change: transform;
+  height: 650px;
 }
 
 /* Add spacing after slider for content */
@@ -66,8 +63,9 @@
 }
 
 .home-slider .swiper-slide {
-  position: relative;
   height: 650px;
+  background-size: cover;
+  background-position: center;
 }
 
 .home-slider .swiper-slide img {
@@ -199,23 +197,20 @@
 
 @media screen and (max-width: 767px) {
   .shopify-section-slider {
-    top: 80px;
+    padding-top: 80px;
   }
   
   .shopify-section-slider + .shopify-section {
     margin-top: 650px;
   }
 
-  .desk-image {
-    display: none;
-  }
-  
-  .home-slider {
-    margin-bottom: 50px;
-  }
-
+  .home-slider,
   .home-slider .swiper-slide {
     height: 550px;
+  }
+
+  .desk-image {
+    display: none;
   }
   
   .home-slider .slider-content {
@@ -266,17 +261,14 @@
 
 @media screen and (max-width: 480px) {
   .shopify-section-slider {
-    top: 70px;
+    padding-top: 70px;
   }
   
   .shopify-section-slider + .shopify-section {
     margin-top: 600px;
   }
 
-  .home-slider {
-    margin-bottom: 30px;
-  }
-
+  .home-slider,
   .home-slider .swiper-slide {
     height: 500px;
   }
