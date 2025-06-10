@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   background: #fff;
-  height: 100vh;
+  height: 85vh;
 }
 
 .home-slider .swiper {
@@ -43,7 +43,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
   position: relative;
 }
 
@@ -51,17 +51,17 @@
   position: relative;
   color: #fff;
   z-index: 2;
-  padding: 0 2rem;
   text-align: left;
   pointer-events: none;
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
   width: 100%;
+  max-width: 600px;
 }
 
 .home-slider .slider-content::before {
   content: '';
   position: absolute;
-  bottom: -8rem;
+  bottom: -5rem;
   left: -100vw;
   right: -100vw;
   height: 100vh;
@@ -74,7 +74,7 @@
   font-size: 0.875rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 400;
   color: #fff;
   font-family: "TT Norms Pro Trial", sans-serif;
@@ -82,22 +82,20 @@
 
 .home-slider .slider-content .slide-title {
   color: #fff;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 500;
-  margin: 0 0 2rem;
+  margin: 0 0 1.5rem;
   line-height: 1.1;
   font-family: "Playfair Display", serif;
-  max-width: 800px;
 }
 
 .home-slider .slider-content .cta-button {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #000;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 400;
@@ -109,23 +107,23 @@
 }
 
 .home-slider .slider-content .cta-button:hover {
-  background: #fff;
-  color: #000;
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
 }
 
 .home-slider .slider-content .cta-button svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   transition: transform 0.3s ease;
 }
 
 .home-slider .slider-content .cta-button:hover svg {
-  transform: translateX(6px);
+  transform: translateX(4px);
 }
 
 .swiper-pagination {
   position: absolute;
-  bottom: 3rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -152,21 +150,21 @@
     display: none;
   }
   
+  .home-slider {
+    height: 70vh;
+  }
+  
   .home-slider .slider-content {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
   }
   
   .home-slider .slider-content .slide-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .home-slider .slider-content .slide-subtitle {
-    margin-bottom: 1rem;
-  }
-
-  .home-slider .slider-content .cta-button {
-    padding: 0.75rem 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .container {
@@ -207,17 +205,23 @@
                 loading="lazy"
               >
             {% endif %}
-            <a href="{{ block.settings.slide_link }}" class="slide-link"></a>
-            <div class="container slider-content">
-              <span class="slide-subtitle">{{ block.settings.subtitle }}</span>
-              <h2 class="slide-title">{{ block.settings.slide_title }}</h2>
-              <a href="{{ block.settings.slide_link }}" class="cta-button">
-                {{ block.settings.cta_text | default: 'DISCOVER MORE' }}
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+            {% if block.settings.collection %}
+              <a href="{{ block.settings.collection.url }}" class="slide-link"></a>
+            {% endif %}
+            <div class="container">
+              <div class="slider-content">
+                <span class="slide-subtitle">{{ block.settings.subtitle }}</span>
+                <h2 class="slide-title">{{ block.settings.slide_title }}</h2>
+                {% if block.settings.collection %}
+                  <a href="{{ block.settings.collection.url }}" class="cta-button">
+                    {{ block.settings.cta_text | default: 'DISCOVER MORE' }}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M3.5 12H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                {% endif %}
+              </div>
             </div>
           </div>
         {% endfor %}
@@ -314,9 +318,9 @@ document.addEventListener('DOMContentLoaded', function() {
           "default": "Artisan Home Decor"
         },
         {
-          "type": "url",
-          "id": "slide_link",
-          "label": "Slide Link"
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
         },
         {
           "type": "text",
