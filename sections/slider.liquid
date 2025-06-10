@@ -4,20 +4,26 @@
   position: relative;
   overflow: hidden;
   background: #fff;
+  height: 100vh;
 }
 
 .home-slider .swiper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .home-slider .swiper-slide {
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
 .home-slider .swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -33,24 +39,29 @@
   z-index: 1;
 }
 
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
 .home-slider .slider-content {
-  position: absolute;
-  bottom: 15%;
-  left: 0;
-  right: 0;
+  position: relative;
   color: #fff;
   z-index: 2;
   padding: 0 2rem;
   text-align: left;
-  max-width: 90%;
-  margin: 0 auto;
   pointer-events: none;
+  margin-bottom: 8rem;
+  width: 100%;
 }
 
 .home-slider .slider-content::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -8rem;
   left: -100vw;
   right: -100vw;
   height: 100vh;
@@ -114,7 +125,7 @@
 
 .swiper-pagination {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -142,8 +153,7 @@
   }
   
   .home-slider .slider-content {
-    bottom: 20%;
-    padding: 0 1.5rem;
+    margin-bottom: 6rem;
   }
   
   .home-slider .slider-content .slide-title {
@@ -158,16 +168,15 @@
   .home-slider .slider-content .cta-button {
     padding: 0.75rem 1.5rem;
   }
+
+  .container {
+    padding: 0 1.5rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .mob-image {
     display: none;
-  }
-  
-  .home-slider .slider-content {
-    padding: 0 4rem;
-    max-width: 1400px;
   }
 }
 </style>
