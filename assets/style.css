@@ -51,6 +51,10 @@ body {
     font-size: 14px;
     color: #000;
     letter-spacing: 0.28px;
+    min-height: 100vh;
+    transform-style: preserve-3d;
+    perspective: 1px;
+    overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -343,6 +347,9 @@ a.featured-title {
     flex-grow: 0!important;
     position: relative;
     z-index: 2;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
 }
 .card.card--standard img {
     height: auto;
@@ -3944,6 +3951,10 @@ button.button.full.continue-shopping {
 div#product-grid {
     position: relative;
     z-index: 2;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 @media screen and (max-width: 767px) {
