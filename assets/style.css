@@ -55,6 +55,7 @@ body {
     transform-style: preserve-3d;
     perspective: 1px;
     overflow-x: hidden;
+    position: relative;
 }
 ol, ul {
 	list-style: none;
@@ -145,8 +146,12 @@ header {
     margin-bottom: 0;
     height: auto;
     min-height: 100px;
-    position: relative;
-    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
 }
 .header--center ul {
     gap: 20px;
@@ -1258,6 +1263,7 @@ li.collection-list__item.grid__item.scroll-trigger.animate--slide-in img {
     background-color: #fefefe;
     height: auto;
     min-height: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .header--center.d-fx.jc-c li a,
 .tdu-on-hover {
