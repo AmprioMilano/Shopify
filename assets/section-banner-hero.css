@@ -1,0 +1,152 @@
+.hero-section {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.slide--active {
+  opacity: 1;
+}
+
+.slide--inactive {
+  opacity: 0;
+}
+
+.slide__image {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.slide__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.slide__content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container-custom {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content-wrapper {
+  max-width: 32rem;
+  color: white;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-family: serif;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 3.75rem;
+  }
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.cta-text {
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.25rem;
+  transition: border-color 0.3s;
+}
+
+.cta-link:hover .cta-text {
+  border-color: #B8860B;
+}
+
+.cta-arrow {
+  transition: transform 0.3s;
+}
+
+.cta-link:hover .cta-arrow {
+  transform: translateX(0.5rem);
+}
+
+.indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+}
+
+.indicators__wrapper {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.indicator {
+  width: 3rem;
+  height: 0.25rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator--active {
+  background: rgba(255, 255, 255, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
