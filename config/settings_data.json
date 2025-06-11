@@ -203,8 +203,8 @@
             "settings": {
               "image": "shopify://shop_images/banner-img2.webp",
               "image_mob": "shopify://shop_images/CRYSTAL_TOUCH_glasses_1.jpg",
-              "subtitle": "",
-              "slide_title": "Crystal Touch Collection",
+              "subtitle": "OUTDOOR COLLECTION",
+              "slide_title": "Crystal Touch",
               "slide_link": "shopify://collections/crystal-touch",
               "cta_text": "DISCOVER MORE"
             }
