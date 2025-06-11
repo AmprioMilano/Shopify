@@ -226,7 +226,7 @@
             "settings": {
               "image": "shopify://shop_images/banner-img1.webp",
               "image_mob": "shopify://shop_images/banner-img1.webp",
-              "subtitle": "HANDMADE EXCELLENCE",
+              "subtitle": "",
               "slide_title": "Collection for Yachts & Cruises",
               "slide_link": "shopify://collections/tableware",
               "cta_text": "DISCOVER MORE"
