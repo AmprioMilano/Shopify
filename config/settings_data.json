@@ -203,7 +203,7 @@
             "settings": {
               "image": "shopify://shop_images/banner-img2.webp",
               "image_mob": "shopify://shop_images/CRYSTAL_TOUCH_glasses_1.jpg",
-              "subtitle": "HANDMADE EXCELLENCE",
+              "subtitle": "",
               "slide_title": "Crystal Touch Collection",
               "slide_link": "shopify://collections/crystal-touch",
               "cta_text": "DISCOVER MORE"
@@ -214,7 +214,7 @@
             "settings": {
               "image": "shopify://shop_images/MAMMA_MIA_table.jpg",
               "image_mob": "shopify://shop_images/MAMMA_MIA_melamine_plates.jpg",
-              "subtitle": "HANDMADE EXCELLENCE",
+              "subtitle": "",
               "slide_title": "Mamma Mia Collection",
               "slide_link": "shopify://collections/mamma-mia",
               "cta_text": "DISCOVER MORE"
