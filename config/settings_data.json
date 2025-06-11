@@ -143,24 +143,26 @@
       "slider": {
         "type": "slider",
         "blocks": {
-          "slide_BE38kB": {
-            "type": "slide",
-            "settings": {
-              "image": "shopify://shop_images/EEEE3084.jpg",
-              "image_mob": "shopify://shop_images/EEEE3084.jpg",
-              "slide_title": "Tableware for Yachts",
-              "slide_link": "shopify://collections/yachts",
-              "paragraph": "<p>Unbreakable, premium, and stylish</p>"
-            }
-          },
           "slide_QqrkqT": {
             "type": "slide",
             "settings": {
               "image": "shopify://shop_images/DSC04959-2.jpg",
               "image_mob": "shopify://shop_images/DSC04959-2.jpg",
+              "subtitle": "HANDMADE EXCELLENCE",
               "slide_title": "Baroque & Rock Outdoor Collection",
               "slide_link": "shopify://collections/baroque-rock",
-              "paragraph": "<p>Charm and boundless beauty</p>"
+              "cta_text": "DISCOVER MORE"
+            }
+          },
+          "slide_BE38kB": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/EEEE3084.jpg",
+              "image_mob": "shopify://shop_images/EEEE3084.jpg",
+              "subtitle": "HANDMADE EXCELLENCE",
+              "slide_title": "Tableware for Yachts",
+              "slide_link": "shopify://collections/yachts",
+              "cta_text": "DISCOVER MORE"
             }
           },
           "slide_CnwVJA": {
@@ -168,9 +170,10 @@
             "settings": {
               "image": "shopify://shop_images/FIRENZE_piatti.jpg",
               "image_mob": "shopify://shop_images/FIRENZE_piatti.jpg",
+              "subtitle": "HANDMADE EXCELLENCE",
               "slide_title": "Firenze Collection",
               "slide_link": "shopify://collections/firenze",
-              "paragraph": "<p>Irresistibly hip and yet timeless.</p>"
+              "cta_text": "DISCOVER MORE"
             }
           },
           "slide_FGU8BM": {
@@ -178,9 +181,10 @@
             "settings": {
               "image": "shopify://shop_images/chickzen.jpg",
               "image_mob": "shopify://shop_images/DSC04820_9ec735a3-fa48-486e-b19f-a0e47d70d0f2.jpg",
+              "subtitle": "HANDMADE EXCELLENCE",
               "slide_title": "Chic & Zen Outdoor Collection",
               "slide_link": "shopify://collections/chic-zen",
-              "paragraph": "<p>Refined shapes and a classic touch</p>"
+              "cta_text": "DISCOVER MORE"
             }
           },
           "slide_RVPQRm": {
@@ -188,9 +192,10 @@
             "settings": {
               "image": "shopify://shop_images/Baci_Milano_ORTIGIA_outdoor_12.jpg",
               "image_mob": "shopify://shop_images/Baci_Milano_ORTIGIA_outdoor_12.jpg",
+              "subtitle": "HANDMADE EXCELLENCE",
               "slide_title": "ORTIGIA Collection",
               "slide_link": "shopify://collections/ortigia",
-              "paragraph": "<p>Celebrate the joy of life with personality and passion.</p>"
+              "cta_text": "DISCOVER MORE"
             }
           },
           "slide_zcdCDM": {
@@ -198,9 +203,10 @@
             "settings": {
               "image": "shopify://shop_images/banner-img2.webp",
               "image_mob": "shopify://shop_images/CRYSTAL_TOUCH_glasses_1.jpg",
+              "subtitle": "HANDMADE EXCELLENCE",
               "slide_title": "Crystal Touch Collection",
               "slide_link": "shopify://collections/crystal-touch",
-              "paragraph": "<p>A masterpiece of creativity, showcasing unique shapes and designs</p>"
+              "cta_text": "DISCOVER MORE"
             }
           },
           "slide_tkpEFw": {
@@ -208,9 +214,10 @@
             "settings": {
               "image": "shopify://shop_images/MAMMA_MIA_table.jpg",
               "image_mob": "shopify://shop_images/MAMMA_MIA_melamine_plates.jpg",
+              "subtitle": "HANDMADE EXCELLENCE",
               "slide_title": "Mamma Mia Collection",
               "slide_link": "shopify://collections/mamma-mia",
-              "paragraph": "<p>A kaleidoscope of colors, intriguing symbols, mysterious writings, and captivating<br/>designs</p>"
+              "cta_text": "DISCOVER MORE"
             }
           },
           "slide_AV89bV": {
@@ -219,15 +226,16 @@
             "settings": {
               "image": "shopify://shop_images/banner-img1.webp",
               "image_mob": "shopify://shop_images/banner-img1.webp",
+              "subtitle": "HANDMADE EXCELLENCE",
               "slide_title": "Collection for Yachts & Cruises",
               "slide_link": "shopify://collections/tableware",
-              "paragraph": "<p>It is a long established fact that a reader will be distracted by the readable content</p>"
+              "cta_text": "DISCOVER MORE"
             }
           }
         },
         "block_order": [
-          "slide_BE38kB",
           "slide_QqrkqT",
+          "slide_BE38kB",
           "slide_CnwVJA",
           "slide_FGU8BM",
           "slide_RVPQRm",
