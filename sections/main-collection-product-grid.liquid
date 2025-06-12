@@ -298,6 +298,17 @@ document.addEventListener("DOMContentLoaded", function () {
           >
             <div class="loading-overlay gradient"></div>
             
+            <!-- Debug info -->
+            <div style="display: none;" class="debug-info">
+              {%- for product in collection.products -%}
+                Product: {{ product.title }}
+                Tags: {{ product.tags | join: ', ' }}
+                Has Featured: {% if product.tags contains 'featured' %}yes{% else %}no{% endif %}
+                Media count: {{ product.media.size }}
+                {% if product.media[1] %}Second media: {{ product.media[1] | image_url }}{% endif %}
+              {%- endfor -%}
+            </div>
+
             <div
               id="product-grid" 
               data-test='{%- for product in collection.products -%}{%- for tag in product.tags -%}{% if tag == 'featured' %}{{ product.handle}}^{{ product.title}}^{{ product.price | money}}^{{ product.media[1] | image_url }}^{{ product.metafields.product_settings.material }}^{{ product.metafields.product_settings.size }}^{{ product.metafields.product_settings.brand }}|{% endif %}{%- endfor -%}{%- endfor -%}'
