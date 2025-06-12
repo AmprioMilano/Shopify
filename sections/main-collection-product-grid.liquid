@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div
               id="product-grid" 
-              data-test='{%- for product in collection.products -%}{%- for tag in product.tags -%}{% if tag == 'featured' %}{{ product.handle}}^{{ product.title}}^{{ product.price | money}}^{{ product.media[1] | image_url }}^{{ product.metafields.product_settings.material }}^{{ product.metafields.product_settings.size }}^{{ product.metafields.product_settings.brand }}|{% endif %}{%- endfor -%}{%- endfor -%}'
+              data-test='{%- for product in collection.products -%}{%- for tag in product.tags -%}{% if tag == 'Featured' %}{{ product.handle}}^{{ product.title}}^{{ product.price | money}}^{{ product.media[1] | image_url }}^{{ product.metafields.product_settings.material }}^{{ product.metafields.product_settings.size }}^{{ product.metafields.product_settings.brand }}|{% endif %}{%- endfor -%}{%- endfor -%}'
               data-id="{{ section.id }}"
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
@@ -332,12 +332,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 {%- endif -%}
                 
                 <div
-                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if product.tags contains 'featured' %} featured-product-item{% endif %}"
+                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if product.tags contains 'Featured' %} featured-product-item{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
-                  {% if product.tags contains 'featured' and product.media[1] %}
+                  {% if product.tags contains 'Featured' and product.media[1] %}
                     data-lifestyle-image="{{ product.media[1] | image_url: width: 800 }}"
                   {% endif %}
                 >
