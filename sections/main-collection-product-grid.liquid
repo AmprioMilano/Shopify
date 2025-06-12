@@ -320,6 +320,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
+                  <!-- START TEST -->
+                  {% if product.tags contains 'Featured' %}
+                  <div style="background: yellow; padding: 10px; margin-bottom: 10px;">
+                    This is a featured product!<br>
+                    Title: {{ product.title }}<br>
+                    Has second image: {% if product.media[1] %}YES ({{ product.media[1] | image_url }}){% else %}NO{% endif %}
+                  </div>
+                  {% endif %}
+                  <!-- END TEST -->
+
                   {% if product.tags contains 'Featured' and product.media[1] %}
                     <div class="lifestyle-image">
                       <img
@@ -328,9 +338,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         width="{{ product.media[1].width }}"
                         height="{{ product.media[1].height }}"
                         loading="lazy"
+                        style="border: 3px solid red;" <!-- временно добавим красную рамку -->
                       >
                     </div>
                   {% endif %}
+
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
