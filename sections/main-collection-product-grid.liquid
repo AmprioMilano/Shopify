@@ -307,28 +307,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               "
-          data-globo-filter-items data-settingscustom='{"card_color_scheme": "{% if settings.card_color_scheme %}{{ settings.card_color_scheme }}{% endif %}", "sold_out_badge_color_scheme": "{% if settings.sold_out_badge_color_scheme %}{{ settings.sold_out_badge_color_scheme }}{% endif %}"}'data-section-id="{% if section.id %}{{section.id}}{% endif %}" data-sectionId="{% if section.id %}{{section.id}}{% endif %}" data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}'
+              data-globo-filter-items 
+              data-settingscustom='{"card_color_scheme": "{% if settings.card_color_scheme %}{{ settings.card_color_scheme }}{% endif %}", "sold_out_badge_color_scheme": "{% if settings.sold_out_badge_color_scheme %}{{ settings.sold_out_badge_color_scheme }}{% endif %}"}'
+              data-section-id="{% if section.id %}{{section.id}}{% endif %}" 
+              data-sectionId="{% if section.id %}{{section.id}}{% endif %}" 
+              data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}'
             >
-            
-            
-              
-            
               {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
-                
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 
                 <div
-                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if product.tags contains 'featured' %} featured-product-item{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
@@ -339,12 +337,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     lazy_load: lazy_load,
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
-                    section_id: section.id,
+                    section_id: section.id
                   %}
                 </div>
                 
                 {%- assign skip_card_product_styles = true -%}
-                {%- endfor -%}
+              {%- endfor -%}
             </div>
 
             {%- if paginate.pages > 1 -%}
