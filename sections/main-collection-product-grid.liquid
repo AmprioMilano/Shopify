@@ -298,43 +298,15 @@ document.addEventListener("DOMContentLoaded", function () {
           >
             <div class="loading-overlay gradient"></div>
 
-            <!-- Debug info -->
-            <div style="background: #f5f5f5; padding: 20px; margin: 20px 0;">
-              <h3>Debug Info:</h3>
-              {%- for product in collection.products -%}
-                <div style="margin-bottom: 10px; border-bottom: 1px solid #ddd;">
-                  <strong>Product:</strong> {{ product.title }}<br>
-                  <strong>Tags (raw):</strong> {{ product.tags }}<br>
-                  <strong>Tags (joined):</strong> {{ product.tags | join: ', ' }}<br>
-                  <strong>Individual Tags:</strong><br>
-                  {%- for tag in product.tags -%}
-                    &nbsp;&nbsp;- [{{ tag }}] (length: {{ tag | size }}) (downcase: [{{ tag | downcase }}])<br>
-                  {%- endfor -%}
-                  <strong>Has Featured Tag (exact):</strong> {% if product.tags contains 'Featured' %}YES{% else %}NO{% endif %}<br>
-                  <strong>Media Count:</strong> {{ product.media.size }}<br>
-                  {% if product.media[1] %}
-                    <strong>Second Image URL:</strong> {{ product.media[1] | image_url }}<br>
-                  {% endif %}
-                </div>
-              {%- endfor -%}
-            </div>
-
             <div
               id="product-grid" 
-              data-test='{%- for product in collection.products -%}{%- for tag in product.tags -%}{% if tag == 'Featured' %}{{ product.handle}}^{{ product.title}}^{{ product.price | money}}^{{ product.media[1] | image_url }}^{{ product.metafields.product_settings.material }}^{{ product.metafields.product_settings.size }}^{{ product.metafields.product_settings.brand }}|{% endif %}{%- endfor -%}{%- endfor -%}'
-              data-id="{{ section.id }}"
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               "
-              data-globo-filter-items 
-              data-settingscustom='{"card_color_scheme": "{% if settings.card_color_scheme %}{{ settings.card_color_scheme }}{% endif %}", "sold_out_badge_color_scheme": "{% if settings.sold_out_badge_color_scheme %}{{ settings.sold_out_badge_color_scheme }}{% endif %}"}'
-              data-section-id="{% if section.id %}{{section.id}}{% endif %}" 
-              data-sectionId="{% if section.id %}{{section.id}}{% endif %}" 
-              data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}'
+              data-id="{{ section.id }}"
             >
-              {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -348,17 +320,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  <!-- Debug info for this item -->
-                  <div style="font-size: 12px; color: #666; margin-bottom: 10px;">
-                    Item classes: grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if product.tags contains 'Featured' %} featured-product-item{% endif %}
-                  </div>
-
                   {% if product.tags contains 'Featured' and product.media[1] %}
                     <div class="lifestyle-image">
-                      <!-- Debug info for lifestyle image -->
-                      <div style="position: absolute; top: -20px; left: 0; font-size: 12px; color: #666;">
-                        Loading lifestyle image: {{ product.media[1] | image_url: width: 800 }}
-                      </div>
                       <img
                         src="{{ product.media[1] | image_url: width: 800 }}"
                         alt="{{ product.media[1].alt | escape }}"
