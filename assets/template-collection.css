@@ -111,17 +111,21 @@
   height: 100%;
 }
 
-.featured-product-item::before {
-  content: '';
+.featured-product-item .lifestyle-image {
   position: absolute;
   left: 0;
   top: 0;
   width: 380px;
   height: 100%;
-  background-size: cover;
-  background-position: center;
   border-radius: 10px;
-  background-image: attr(data-lifestyle-image url);
+  overflow: hidden;
+}
+
+.featured-product-item .lifestyle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @media screen and (max-width: 989px) {
@@ -129,7 +133,7 @@
     padding-left: 0;
   }
 
-  .featured-product-item::before {
+  .featured-product-item .lifestyle-image {
     display: none;
   }
 }
