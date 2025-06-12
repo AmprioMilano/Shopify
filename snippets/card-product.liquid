@@ -1,5 +1,3 @@
-<!-- ★ TEST‑SNIPPET‑CARD‑PRODUCT ★ -->
-
 {% comment %}
   Renders a product card
 
@@ -25,8 +23,6 @@
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-  {{ 'component-card.css' | asset_url | stylesheet_tag }}
-  {{ 'component-media.css' | asset_url | stylesheet_tag }}
 
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
@@ -44,19 +40,9 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover{% if card_product.tags contains 'Featured' %} has-featured-image{% endif %}">
-    {%- if card_product.tags contains 'Featured' and card_product.media[1] != blank -%}
-      <div class="featured-lifestyle-image">
-        <img
-          src="{{ card_product.media[1] | image_url: width: 600 }}"
-          alt="{{ card_product.media[1].alt | escape }}"
-          width="600"
-          height="600"
-          loading="lazy"
-        >
-      </div>
-    {%- endif -%}
-    <div class="card card--{{ settings.card_style }}">
+  <div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div
+      class="card card--{{ settings.card_style }}">
       <div>
         {%- if card_product.featured_media -%}
           <a href="{{ card_product.url }}">
