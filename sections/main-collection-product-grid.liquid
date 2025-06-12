@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             <div
               id="product-grid" 
-              data-test='{%- for product in collection.products -%}{%- for tag in product.tags -%}{% if tag == 'Featured' %}{{ product.handle}}^{{ product.title}}^{{ product.price | money}}^{{ product.media[1] | image_url }}^{{ product.metafields.product_settings.material }}^{{ product.metafields.product_settings.size }}^{{ product.metafields.product_settings.brand }}|{% endif %}{%- endfor -%}{%- endfor -%}'
+              data-test='{%- for product in collection.products -%}{%- for tag in product.tags -%}{% if tag == 'featured' %}{{ product.handle}}^{{ product.title}}^{{ product.price | money}}^{{ product.media[1] | image_url }}^{{ product.metafields.product_settings.material }}^{{ product.metafields.product_settings.size }}^{{ product.metafields.product_settings.brand }}|{% endif %}{%- endfor -%}{%- endfor -%}'
               data-id="{{ section.id }}"
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
