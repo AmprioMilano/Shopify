@@ -1,3 +1,5 @@
+<!-- ★ TEST‑SNIPPET‑CARD‑PRODUCT ★ -->
+
 {% comment %}
   Renders a product card
 
@@ -23,6 +25,8 @@
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
+  {{ 'component-card.css' | asset_url | stylesheet_tag }}
+  {{ 'component-media.css' | asset_url | stylesheet_tag }}
 
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
