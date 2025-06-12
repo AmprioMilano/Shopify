@@ -337,6 +337,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
+                  {% if product.tags contains 'featured' and product.media[1] %}
+                    data-lifestyle-image="{{ product.media[1] | image_url: width: 800 }}"
+                  {% endif %}
                 >
                   {% render 'card-product',
                     card_product: product,
