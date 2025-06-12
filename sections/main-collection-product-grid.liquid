@@ -297,15 +297,25 @@ document.addEventListener("DOMContentLoaded", function () {
             class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
           >
             <div class="loading-overlay gradient"></div>
-            
+
             <!-- Debug info -->
-            <div style="display: none;" class="debug-info">
+            <div style="background: #f5f5f5; padding: 20px; margin: 20px 0;">
+              <h3>Debug Info:</h3>
               {%- for product in collection.products -%}
-                Product: {{ product.title }}
-                Tags: {{ product.tags | join: ', ' }}
-                Has Featured: {% if product.tags contains 'featured' %}yes{% else %}no{% endif %}
-                Media count: {{ product.media.size }}
-                {% if product.media[1] %}Second media: {{ product.media[1] | image_url }}{% endif %}
+                <div style="margin-bottom: 10px; border-bottom: 1px solid #ddd;">
+                  <strong>Product:</strong> {{ product.title }}<br>
+                  <strong>Tags (raw):</strong> {{ product.tags }}<br>
+                  <strong>Tags (joined):</strong> {{ product.tags | join: ', ' }}<br>
+                  <strong>Individual Tags:</strong><br>
+                  {%- for tag in product.tags -%}
+                    &nbsp;&nbsp;- [{{ tag }}] (length: {{ tag | size }}) (downcase: [{{ tag | downcase }}])<br>
+                  {%- endfor -%}
+                  <strong>Has Featured Tag (exact):</strong> {% if product.tags contains 'Featured' %}YES{% else %}NO{% endif %}<br>
+                  <strong>Media Count:</strong> {{ product.media.size }}<br>
+                  {% if product.media[1] %}
+                    <strong>Second Image URL:</strong> {{ product.media[1] | image_url }}<br>
+                  {% endif %}
+                </div>
               {%- endfor -%}
             </div>
 
@@ -338,8 +348,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
+                  <!-- Debug info for this item -->
+                  <div style="font-size: 12px; color: #666; margin-bottom: 10px;">
+                    Item classes: grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if product.tags contains 'Featured' %} featured-product-item{% endif %}
+                  </div>
+
                   {% if product.tags contains 'Featured' and product.media[1] %}
                     <div class="lifestyle-image">
+                      <!-- Debug info for lifestyle image -->
+                      <div style="position: absolute; top: -20px; left: 0; font-size: 12px; color: #666;">
+                        Loading lifestyle image: {{ product.media[1] | image_url: width: 800 }}
+                      </div>
                       <img
                         src="{{ product.media[1] | image_url: width: 800 }}"
                         alt="{{ product.media[1].alt | escape }}"
