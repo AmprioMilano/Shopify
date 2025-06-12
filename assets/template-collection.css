@@ -99,41 +99,37 @@
 }
 
 .featured-product-item {
-  width: calc(50% - 10px) !important;
-  margin-right: 20px;
+  width: 100% !important;
+  margin-bottom: 40px;
   position: relative;
+  padding-left: 400px;
+  grid-column: 1 / -1 !important;
 }
 
 .featured-product-item .card-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.featured-product-item .featured-lifestyle-image {
-  position: absolute;
-  left: -400px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 380px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.featured-product-item .featured-lifestyle-image img {
-  width: 100%;
+  position: relative;
   height: 100%;
-  object-fit: cover;
-  display: block;
+}
+
+.featured-product-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 380px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  background-image: attr(data-lifestyle-image url);
 }
 
 @media screen and (max-width: 989px) {
   .featured-product-item {
-    width: 100% !important;
-    margin-right: 0;
+    padding-left: 0;
   }
 
-  .featured-product-item .featured-lifestyle-image {
+  .featured-product-item::before {
     display: none;
   }
 }
