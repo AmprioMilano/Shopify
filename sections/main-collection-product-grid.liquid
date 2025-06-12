@@ -337,10 +337,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
-                  {% if product.tags contains 'Featured' and product.media[1] %}
-                    data-lifestyle-image="{{ product.media[1] | image_url: width: 800 }}"
-                  {% endif %}
                 >
+                  {% if product.tags contains 'Featured' and product.media[1] %}
+                    <div class="lifestyle-image">
+                      <img
+                        src="{{ product.media[1] | image_url: width: 800 }}"
+                        alt="{{ product.media[1].alt | escape }}"
+                        width="{{ product.media[1].width }}"
+                        height="{{ product.media[1].height }}"
+                        loading="lazy"
+                      >
+                    </div>
+                  {% endif %}
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
