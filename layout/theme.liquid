@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+ {%- render 'layouthub_header' -%}
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -180,7 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
+      <!--LayoutHub-Workspace-Start-->{{ content_for_layout }}<!--LayoutHub-Workspace-End-->
     </main>
 
     {% sections 'footer-group' %}
@@ -311,5 +312,6 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <noscript>
 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8476649&fmt=gif" />
 </noscript>
-  </body>
+  {%- render 'layouthub_footer' -%} 
+ </body>
 </html>
